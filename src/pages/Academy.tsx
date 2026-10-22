@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, GraduationCap, CheckCircle2, ArrowRight, Flame, Users, Calendar, Sparkles } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 
 interface AcademyProps {
   onApply: () => void;
@@ -50,113 +50,109 @@ export const Academy: React.FC<AcademyProps> = ({ onApply }) => {
   ];
 
   return (
-    <div className="pt-32 pb-24 space-y-20">
+    <div className="pt-36 pb-24 space-y-24 text-left">
       {/* HEADER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-left space-y-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold text-amber-400">
-            <GraduationCap className="w-3.5 h-3.5" />
-            <span>Sixth Sense Academy</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">
-            Learn to Trade Real Liquidity with <br />
-            <span className="gold-gradient-text">Real Funded Capital</span>
+        <div className="space-y-4 max-w-3xl">
+          <p className="text-xs text-[#d4af37] font-medium tracking-wide">
+            Sixth Sense Academy
+          </p>
+          <h1 className="font-serif text-4xl sm:text-6xl text-[#f1f4f8] leading-[1.08] tracking-tight">
+            Learn to trade real liquidity with funded capital.
           </h1>
-          <p className="text-slate-300 text-base leading-relaxed">
-            Hands-on offline mentorship masterclasses in Palghar & Mumbai conducted by 
-            Founder Mann Jain. No hypothetical indicators—pure institutional price action, 
-            funded challenges, and national league competition.
+          <p className="text-base sm:text-lg text-[#8b9bb4] leading-relaxed font-normal">
+            Hands-on offline mentorship masterclasses in Palghar & Mumbai conducted directly by Founder Mann Jain. Pure institutional price action, risk mechanics, and national league competition.
           </p>
         </div>
       </section>
 
       {/* DEHRADUN COMPETITION SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-[#121720] rounded-xl p-8 sm:p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
-            <div className="lg:col-span-7 space-y-5 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-300">
-                <Flame className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400" />
-                <span>Dehradun 2026 National Championship</span>
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-2">
+                <p className="text-xs text-[#d4af37] font-medium">Dehradun 2026 National Championship</p>
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
+                  Represent Sixth Sense Investments
+                </h2>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                Represent Sixth Sense Investments
-              </h2>
-
-              <p className="text-sm text-slate-300 leading-relaxed">
-                A prestigious Investment & Trading Competition is being conducted in Dehradun, and 
-                Sixth Sense Investments is forming an elite 5-member team to represent us on the national stage.
+              <p className="text-sm text-[#8b9bb4] leading-relaxed">
+                A prestigious Investment & Trading Competition is being conducted in Dehradun, and Sixth Sense Investments is selecting an elite five-member delegation to compete under the firm banner.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#8b9bb4]">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Complete market knowledge & offline training</span>
+                  <Check className="w-4 h-4 text-[#d4af37] shrink-0" />
+                  <span>Comprehensive offline trading curriculum</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Funded live trading capital</span>
+                  <Check className="w-4 h-4 text-[#d4af37] shrink-0" />
+                  <span>Funded live market capital</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Offline masterclasses only (hands-on)</span>
+                  <Check className="w-4 h-4 text-[#d4af37] shrink-0" />
+                  <span>Direct personal mentorship from Mann Jain</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Travel & related expenses 100% sponsored</span>
+                  <Check className="w-4 h-4 text-[#d4af37] shrink-0" />
+                  <span>All travel, boarding, and stay sponsored</span>
                 </div>
               </div>
 
               <div className="pt-2">
                 <button
                   onClick={onApply}
-                  className="px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold rounded-xl text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/20 hover:opacity-95 transition-opacity flex items-center gap-2"
+                  className="px-6 py-3 rounded bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] font-medium text-xs transition-colors flex items-center gap-2"
                 >
-                  <span>Apply for Selection Trial</span>
+                  <span>Apply for cohort & team selection</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
-                <img 
-                  src="/assets/images/img_20.jpg" 
-                  alt="Dehradun Competition Announcement" 
-                  className="w-full h-80 object-cover"
-                />
-              </div>
+              <figure className="space-y-3">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#090c10]">
+                  <img 
+                    src="/assets/images/img_20.jpg" 
+                    alt="Dehradun 2026 Official Delegation Poster" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption className="text-xs text-[#8b9bb4]">
+                  Official Dehradun 2026 Trading Championship poster
+                </figcaption>
+              </figure>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* CURRICULUM */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-10">
-        <div className="text-left space-y-2">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Mastery Path</span>
-          <h2 className="text-3xl font-bold text-white tracking-tight">
-            Institutional Masterclass Curriculum
+      {/* CURRICULUM BREAKDOWN */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+        <div className="space-y-2 max-w-2xl">
+          <p className="text-xs text-[#d4af37] font-medium">Syllabus breakdown</p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
+            Four core modules of institutional trading
           </h2>
-          <p className="text-slate-400 text-sm">
-            4-phase progressive immersion from fundamental auction dynamics to funded execution.
+          <p className="text-sm text-[#8b9bb4]">
+            Constructed to transition participants from speculative retail mistakes to systematic execution.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {curriculum.map((c, idx) => (
-            <div key={idx} className="glass-card rounded-2xl p-6 border border-slate-800 space-y-4 text-left">
-              <span className="text-xs font-bold text-amber-400 tracking-wider uppercase block">
-                {c.module}
-              </span>
-              <h3 className="text-lg font-bold text-white">{c.title}</h3>
-              <ul className="space-y-2 text-xs text-slate-300">
-                {c.topics.map((t, tidx) => (
-                  <li key={tidx} className="flex items-start gap-2">
-                    <span className="text-amber-400 font-bold">›</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {curriculum.map((item, idx) => (
+            <div key={idx} className="bg-[#121720] rounded-xl p-8 space-y-4">
+              <span className="text-xs text-[#d4af37] font-medium">{item.module}</span>
+              <h3 className="font-serif text-xl text-[#f1f4f8]">{item.title}</h3>
+              <ul className="space-y-2 text-xs text-[#8b9bb4] pt-2">
+                {item.topics.map((t, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-[#d4af37]">·</span>
                     <span>{t}</span>
                   </li>
                 ))}
@@ -166,19 +162,28 @@ export const Academy: React.FC<AcademyProps> = ({ onApply }) => {
         </div>
       </section>
 
-      {/* BATCH ENROLLMENT CTA */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 pt-6">
-        <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800 space-y-5">
-          <h2 className="text-3xl font-bold text-white">Join the Next Offline Cohort in Palghar</h2>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto">
-            Limited seats per batch to ensure direct one-on-one trade feedback and screen time with Mann Jain.
-          </p>
-          <button
-            onClick={onApply}
-            className="px-8 py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold rounded-xl text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 hover:from-amber-400 hover:to-amber-500 transition-all active:scale-95"
-          >
-            Apply for Next Offline Cohort
-          </button>
+      {/* GALLERY STRIP */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
+        <h3 className="font-serif text-2xl text-[#f1f4f8]">Offline classrooms & desk sessions</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <figure className="space-y-2">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
+              <img src="/assets/images/img_2.jpg" alt="Mentorship session" className="w-full h-full object-cover" />
+            </div>
+            <figcaption className="text-xs text-[#8b9bb4]">Live price-action masterclass</figcaption>
+          </figure>
+          <figure className="space-y-2">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
+              <img src="/assets/images/img_12.jpg" alt="Student ceremony" className="w-full h-full object-cover" />
+            </div>
+            <figcaption className="text-xs text-[#8b9bb4]">Mentee graduation & awards ceremony</figcaption>
+          </figure>
+          <figure className="space-y-2">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
+              <img src="/assets/images/img_21.jpg" alt="Strategy briefing" className="w-full h-full object-cover" />
+            </div>
+            <figcaption className="text-xs text-[#8b9bb4]">Morning execution planning</figcaption>
+          </figure>
         </div>
       </section>
     </div>

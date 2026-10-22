@@ -52,7 +52,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-[100dvh] bg-[#090c10] text-[#f1f4f8] flex flex-col selection:bg-[#d4af37]/30 selection:text-[#f1f4f8]">
       {/* Navigation */}
       <Navbar currentPage={currentPage} onNavigate={navigateTo} />
 

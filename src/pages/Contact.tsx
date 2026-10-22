@@ -1,107 +1,111 @@
 import React from 'react';
-import { Mail, Phone, MapPin, MessageSquare, Clock, ShieldCheck, HelpCircle } from 'lucide-react';
+import { Mail, MessageSquare, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import { LeadForm } from '../components/LeadForm';
 
 export const Contact: React.FC = () => {
   const faqs = [
     {
       q: 'How does the association with Aditya Birla Capital work?',
-      a: 'Sixth Sense Investments operates in authorized channel alignment with Aditya Birla Capital. Your capital and depository demat holdings are maintained directly with Aditya Birla Capital, providing institutional-grade custody, safety, and regulatory compliance.'
+      a: 'Sixth Sense Investments operates in authorized channel alignment with Aditya Birla Capital. Your capital and depository demat holdings are maintained directly under your name with Aditya Birla Capital, providing institutional-grade custody, safety, and regulatory compliance.'
     },
     {
-      q: 'What is the minimum capital required for Portfolio Management Services (PMS)?',
-      a: 'As per SEBI guidelines, direct PMS onboarding requires a statutory minimum ticket of ₹50 Lakhs. For investors building towards that threshold, we offer systematic Equity Advisory and Research Analyst subscription baskets.'
+      q: 'What is the statutory capital required for Portfolio Management Services (PMS)?',
+      a: 'As per SEBI regulations, direct onboarding into registered Portfolio Management Services requires a statutory minimum ticket of ₹50 Lakhs. For portfolios accumulating towards that threshold, we provide structured Research Analyst advisory baskets.'
     },
     {
       q: 'How are stock market academy classes conducted?',
-      a: 'Classes are conducted strictly offline at our Palghar and Mumbai centers with live market execution, terminal setups, and real-time order flow tracking. We also select top candidates for funded national trading competitions.'
+      a: 'Classes are conducted strictly offline at our Palghar and Mumbai centers with live terminal setups, auction market profiling, and real-time execution. We also sponsor top candidates for funded national trading championships.'
     },
     {
       q: 'Is Mann Jain registered with SEBI?',
-      a: 'Yes, Mann Jain is a SEBI Registered Research Analyst (INZXXXXX8032) and holds certifications across 6 NISM series with over 5 years of active Registered Investment Advisory (RIA) experience.'
+      a: 'Yes, Mann Jain is a SEBI Registered Research Analyst (INZXXXXX8032) and holds certifications across 6 NISM series with over five years of active Registered Investment Advisory experience.'
     }
   ];
 
   return (
-    <div className="pt-32 pb-24 space-y-20">
+    <div className="pt-36 pb-24 space-y-24 text-left">
       {/* HEADER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-left space-y-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold text-amber-400">
-            <Mail className="w-3.5 h-3.5" />
-            <span>Advisory Desk</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">
-            Connect with Founder <br />
-            <span className="gold-gradient-text">Mann Jain & Advisory Desk</span>
+        <div className="space-y-4 max-w-3xl">
+          <p className="text-xs text-[#d4af37] font-medium tracking-wide">
+            Advisory desk
+          </p>
+          <h1 className="font-serif text-4xl sm:text-6xl text-[#f1f4f8] leading-[1.08] tracking-tight">
+            Connect with Founder Mann Jain & the research desk.
           </h1>
-          <p className="text-slate-300 text-base leading-relaxed">
-            Schedule a confidential consultation, inquire about our PMS and Research Analyst calls, 
-            or apply for upcoming offline stock market academy cohorts.
+          <p className="text-base sm:text-lg text-[#8b9bb4] leading-relaxed font-normal">
+            Schedule a confidential consultation, inquire about our PMS and Research Analyst calls, or apply for upcoming offline stock market academy cohorts.
           </p>
         </div>
       </section>
 
       {/* CONTACT INFO & FORM GRID */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Info Column (5 cols) */}
-          <div className="lg:col-span-5 space-y-6 text-left">
-            <div className="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
-              <h3 className="text-lg font-bold text-white">Direct Communication Channels</h3>
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-[#121720] rounded-xl p-8 space-y-6">
+              <h3 className="font-serif text-xl text-[#f1f4f8]">Direct communication channels</h3>
 
-              <div className="space-y-4 pt-2">
+              <div className="space-y-4">
                 <a
                   href="https://wa.me/919876543210?text=Hi%20Mann%20Jain,%20I%20would%20like%20to%20inquire%20about%20Sixth%20Sense%20Investments%20services."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors group"
+                  className="block p-4 rounded bg-[#1a2230] hover:bg-[#253042] transition-colors"
                 >
-                  <MessageSquare className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-bold text-white group-hover:text-emerald-300">WhatsApp Advisory Desk</span>
-                    <p className="text-[11px] text-slate-300 mt-0.5">+91 98765 43210 (Instant Response)</p>
+                  <div className="flex items-start gap-3">
+                    <MessageSquare className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-medium text-[#f1f4f8]">WhatsApp advisory desk</span>
+                      <p className="text-xs text-[#8b9bb4] mt-0.5">+91 98765 43210</p>
+                    </div>
                   </div>
                 </a>
 
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <Mail className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-bold text-white">Direct Advisory Inquiries</span>
-                    <p className="text-[11px] text-slate-400 mt-0.5">advisory@sixthsenseinvestments.com</p>
+                <div className="p-4 rounded bg-[#1a2230] space-y-1">
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-medium text-[#f1f4f8]">Direct advisory inquiries</span>
+                      <p className="text-xs text-[#8b9bb4] mt-0.5">advisory@sixthsenseinvestments.com</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <MapPin className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-bold text-white">Office Locations</span>
-                    <p className="text-[11px] text-slate-400 mt-0.5">
-                      Palghar Commercial Hub & Mumbai Corporate Branch, Maharashtra
-                    </p>
+                <div className="p-4 rounded bg-[#1a2230] space-y-1">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-medium text-[#f1f4f8]">Office locations</span>
+                      <p className="text-xs text-[#8b9bb4] mt-0.5">
+                        Palghar Commercial Hub & Mumbai Corporate Branch, Maharashtra
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <Clock className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-bold text-white">Trading Hours & Desk Availability</span>
-                    <p className="text-[11px] text-slate-400 mt-0.5">Monday – Friday: 9:00 AM – 6:00 PM IST</p>
+                <div className="p-4 rounded bg-[#1a2230] space-y-1">
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-[#8b9bb4] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-xs font-medium text-[#f1f4f8]">Trading hours & desk availability</span>
+                      <p className="text-xs text-[#8b9bb4] mt-0.5">Monday – Friday: 9:00 AM – 6:00 PM IST</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* SEBI Compliance Card */}
-            <div className="glass-panel rounded-2xl p-6 border border-slate-800 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
+            {/* Fiduciary compliance */}
+            <div className="p-6 bg-[#121720] rounded-xl space-y-2 text-xs text-[#8b9bb4]">
+              <div className="flex items-center gap-2 text-[#d4af37] font-medium">
                 <ShieldCheck className="w-4 h-4" />
-                <span>Regulatory Fiduciary Commitment</span>
+                <span>Statutory fiduciary commitment</span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                We strictly adhere to SEBI code of conduct for Research Analysts and Portfolio Managers. 
-                Zero hidden commissions, direct client custody via Aditya Birla Capital.
+              <p className="leading-relaxed">
+                Registered Research Analyst INZXXXXX8032. All recommendations follow SEBI code of conduct and statutory risk disclosures.
               </p>
             </div>
           </div>
@@ -114,28 +118,20 @@ export const Contact: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ SECTION */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
-        <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 text-amber-400 text-xs font-bold">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Frequently Asked Questions</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Common Inquiries
+      {/* FAQS */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+        <div className="space-y-2 max-w-2xl">
+          <p className="text-xs text-[#d4af37] font-medium">Frequently asked questions</p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
+            Regulatory & operational transparency
           </h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="glass-card rounded-2xl p-6 border border-slate-800 text-left space-y-2">
-              <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                <span className="text-amber-400 font-extrabold">Q.</span>
-                <span>{faq.q}</span>
-              </h3>
-              <p className="text-xs text-slate-300 pl-5 leading-relaxed">
-                {faq.a}
-              </p>
+            <div key={idx} className="bg-[#121720] rounded-xl p-8 space-y-3">
+              <h3 className="font-serif text-lg text-[#f1f4f8]">{faq.q}</h3>
+              <p className="text-sm text-[#8b9bb4] leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>

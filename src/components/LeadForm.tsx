@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import confetti from 'canvas-confetti';
-import { Send, CheckCircle2, ShieldCheck, ArrowRight, Loader2, Sparkles } from 'lucide-react';
+import { Send, CheckCircle2, ShieldCheck, ArrowRight, Loader2 } from 'lucide-react';
 import { api } from '../services/api';
 
 interface LeadFormProps {
@@ -46,7 +45,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
     setError('');
 
     if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim()) {
-      setError('Please fill in your name, email, and phone number.');
+      setError('Please provide your name, email, and contact number.');
       return;
     }
 
@@ -55,23 +54,12 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
       const res = await api.submitLead(formData);
       if (res.success) {
         setSubmitted(true);
-        // Trigger celebratory confetti
-        try {
-          confetti({
-            particleCount: 80,
-            spread: 70,
-            origin: { y: 0.6 }
-          });
-        } catch {
-          // Ignore if blocked
-        }
-
         if (onSuccess) onSuccess();
       } else {
         setError(res.message || 'Submission failed. Please try again.');
       }
     } catch (err: any) {
-      setError(err.message || 'Network error. Please try again or message via WhatsApp.');
+      setError(err.message || 'Network error. Please try again or reach out on WhatsApp.');
     } finally {
       setLoading(false);
     }
@@ -79,24 +67,26 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
 
   if (submitted) {
     return (
-      <div className={`glass-panel rounded-2xl p-8 border border-emerald-500/30 text-center space-y-4 ${className}`}>
-        <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto border border-emerald-500/40 animate-bounce">
-          <CheckCircle2 className="w-8 h-8" />
+      <div data-ui="form" className={`bg-[#121720] text-[#f1f4f8] rounded-xl p-8 sm:p-10 text-center space-y-5 ${className}`}>
+        <div className="w-12 h-12 bg-[#1a2230] text-[#d4af37] rounded-full flex items-center justify-center mx-auto">
+          <CheckCircle2 className="w-6 h-6" />
         </div>
-        <h3 className="text-xl font-bold text-white">Consultation Request Received!</h3>
-        <p className="text-slate-300 text-sm max-w-md mx-auto">
-          Thank you, <strong className="text-white">{formData.name}</strong>. Founder <strong>Mann Jain</strong> and our senior research advisory desk will review your profile and contact you within 2 business hours.
-        </p>
+        <div className="space-y-2">
+          <h3 className="font-serif text-2xl text-[#f1f4f8]">Consultation request registered</h3>
+          <p className="text-[#8b9bb4] text-sm max-w-md mx-auto">
+            Founder Mann Jain and our advisory desk will review your requirements and reach out within 2 business hours.
+          </p>
+        </div>
 
-        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={`https://wa.me/919876543210?text=Hi%20Mann%20Jain,%20I%20just%20submitted%20a%20consultation%20request%20for%20${encodeURIComponent(formData.service_interested)}.%20My%20name%20is%20${encodeURIComponent(formData.name)}.`}
+            href={`https://wa.me/919876543210?text=Hi%20Mann%20Jain,%20I%20have%20submitted%20a%20consultation%20request%20for%20${encodeURIComponent(formData.service_interested)}.%20Name:%20${encodeURIComponent(formData.name)}.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-5 rounded-lg text-xs transition-colors shadow-lg shadow-emerald-950"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] font-medium py-3 px-6 rounded text-sm transition-colors"
           >
-            <span>Fast-Track on WhatsApp</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <span>Direct WhatsApp desk</span>
+            <ArrowRight className="w-4 h-4" />
           </a>
 
           <button
@@ -111,9 +101,9 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
                 message: ''
               });
             }}
-            className="w-full sm:w-auto text-xs text-slate-400 hover:text-white underline py-2"
+            className="w-full sm:w-auto text-sm text-[#8b9bb4] hover:text-[#f1f4f8] py-2"
           >
-            Submit Another Request
+            Submit another inquiry
           </button>
         </div>
       </div>
@@ -121,43 +111,40 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`glass-panel rounded-2xl p-6 sm:p-8 space-y-5 border border-slate-800 ${className}`}>
-      <div className="space-y-1">
-        <div className="flex items-center gap-2 text-xs font-bold text-amber-400 tracking-wider uppercase">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Priority Advisory Access</span>
-        </div>
-        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">Request an Institutional Portfolio Review</h3>
-        <p className="text-slate-400 text-xs">
-          Direct confidential consultation with Founder & SEBI Registered R.A. Mann Jain.
+    <form data-ui="form" onSubmit={handleSubmit} className={`bg-[#121720] text-[#f1f4f8] rounded-xl p-8 sm:p-10 space-y-6 ${className}`}>
+      <div className="space-y-2 text-left">
+        <p className="text-xs text-[#d4af37] font-medium">Advisory consultation</p>
+        <h3 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8]">Institutional portfolio review</h3>
+        <p className="text-[#8b9bb4] text-sm">
+          Direct consultation with Founder & SEBI Registered Research Analyst Mann Jain.
         </p>
       </div>
 
       {error && (
-        <div className="bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs px-3.5 py-2.5 rounded-lg">
+        <div className="bg-[#241315] text-[#f87171] text-sm px-4 py-3 rounded">
           {error}
         </div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-4 text-left">
         <div>
-          <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-            Full Name <span className="text-amber-400">*</span>
+          <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
+            Full name
           </label>
           <input
             type="text"
             required
-            placeholder="e.g. Rahul Sharma"
+            placeholder="Rahul Sharma"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full bg-slate-900/90 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all"
+            className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37]"
           />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-              Email Address <span className="text-amber-400">*</span>
+            <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
+              Email address
             </label>
             <input
               type="email"
@@ -165,13 +152,13 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
               placeholder="rahul@example.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full bg-slate-900/90 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all"
+              className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-              Phone / WhatsApp Number <span className="text-amber-400">*</span>
+            <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
+              Contact number / WhatsApp
             </label>
             <input
               type="tel"
@@ -179,23 +166,23 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
               placeholder="+91 98765 43210"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full bg-slate-900/90 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all"
+              className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37]"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-              Service of Interest
+            <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
+              Service of interest
             </label>
             <select
               value={formData.service_interested}
               onChange={(e) => setFormData({ ...formData, service_interested: e.target.value })}
-              className="w-full bg-slate-900/90 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all cursor-pointer"
+              className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#d4af37] cursor-pointer"
             >
               {servicesList.map((s) => (
-                <option key={s} value={s} className="bg-slate-900 text-white">
+                <option key={s} value={s} className="bg-[#090c10] text-[#f1f4f8]">
                   {s}
                 </option>
               ))}
@@ -203,16 +190,16 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-              Investment Capital / Portfolio Size
+            <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
+              Portfolio capital size
             </label>
             <select
               value={formData.investment_budget}
               onChange={(e) => setFormData({ ...formData, investment_budget: e.target.value })}
-              className="w-full bg-slate-900/90 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all cursor-pointer"
+              className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#d4af37] cursor-pointer"
             >
               {budgetTiers.map((b) => (
-                <option key={b} value={b} className="bg-slate-900 text-white">
+                <option key={b} value={b} className="bg-[#090c10] text-[#f1f4f8]">
                   {b}
                 </option>
               ))}
@@ -221,15 +208,15 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-            Brief Overview of Your Goals or Current Holdings
+          <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
+            Current objectives or portfolio background
           </label>
           <textarea
             rows={3}
-            placeholder="Share your current investment timeline, risk appetite, or specific requirements..."
+            placeholder="Share your investment horizon, risk tolerance, or specific goals..."
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full bg-slate-900/90 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all resize-none"
+            className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37] resize-none"
           ></textarea>
         </div>
       </div>
@@ -238,25 +225,25 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3.5 px-6 rounded-lg font-bold text-sm bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 shadow-xl shadow-amber-500/20 transition-all active:scale-[0.99] flex items-center justify-center gap-2 disabled:opacity-50"
+          className="w-full py-3.5 px-6 rounded font-medium text-sm bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
         >
           {loading ? (
             <>
               <Loader2 className="w-4 h-4 animate-spin" />
-              <span>Transmitting Securely to Cloudflare D1...</span>
+              <span>Transmitting details...</span>
             </>
           ) : (
             <>
-              <span>Submit Consultation Request</span>
+              <span>Schedule advisory review</span>
               <Send className="w-4 h-4" />
             </>
           )}
         </button>
       </div>
 
-      <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500 pt-1">
-        <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-        <span>100% Confidential • Direct Fiduciary Oversight by Mann Jain (SEBI R.A.)</span>
+      <div className="flex items-center justify-center gap-2 text-xs text-[#8b9bb4] pt-1">
+        <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
+        <span>SEBI compliance standards observed. Complete client confidentiality maintained.</span>
       </div>
     </form>
   );

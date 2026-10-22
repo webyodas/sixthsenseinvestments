@@ -12,11 +12,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ini
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div data-ui="modal" className="fixed inset-0 z-50 bg-[#090c10]/90 flex items-center justify-center p-4 overflow-y-auto">
       <div className="relative max-w-xl w-full my-8">
         <button
           onClick={onClose}
-          className="absolute -top-3 -right-3 z-10 w-8 h-8 rounded-full bg-slate-900 border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center shadow-lg"
+          className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-[#1a2230] text-[#8b9bb4] hover:text-[#f1f4f8] flex items-center justify-center"
           aria-label="Close modal"
         >
           <X className="w-4 h-4" />
@@ -26,7 +26,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ini
           initialService={initialService} 
           onSuccess={() => {
             setTimeout(() => {
-              // keep modal open for confirmation or let user close
+              // auto-dismiss if needed
             }, 3000);
           }} 
         />

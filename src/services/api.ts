@@ -32,7 +32,7 @@ No overthinking. No panic adjustments. You design the risk matrix before the mar
     content: `Building true wealth in Indian equities requires moving beyond fragmented stock picking. Through our institutional channel partnership with Aditya Birla Capital, Sixth Sense Investments delivers structured Portfolio Management Services (PMS) and depository-grade security.
 
 ### Why High-Net-Worth Portfolios Need Institutional Architecture
-1. **Dynamic Asset Allocation**: Seamless transitions between large-cap stability, mid-cap compounding engines, and tactical cash reserves.
+1. **Dynamic Asset Allocation**: Disciplined rebalancing between large-cap stability, mid-cap compounding engines, and tactical cash reserves.
 2. **Fiduciary Transparency**: Complete direct custody, audited performance reporting, and SEBI-regulated fee structures.
 3. **Access to Institutional Primary Offerings**: Priority allocation and research coverage on premier IPOs before public distribution.
 

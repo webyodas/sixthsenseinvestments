@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Award, Building2, CheckCircle2, ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ChevronRight, ShieldCheck } from 'lucide-react';
 
 interface AboutProps {
   onOpenBooking: () => void;
@@ -11,22 +11,22 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
     {
       series: 'NISM Series XV & XV-B',
       title: 'SEBI Research Analyst Certification',
-      desc: 'Mandatory statutory credential authorizing independent equity research, valuation modeling, and issuing public/private investment recommendations under SEBI (Research Analysts) Regulations, 2014.'
+      desc: 'Mandatory statutory credential authorizing independent equity research, valuation modeling, and issuing investment recommendations under SEBI (Research Analysts) Regulations, 2014.'
     },
     {
-      series: 'NISM Series XXI(A & B)',
+      series: 'NISM Series XXI (A & B)',
       title: 'Portfolio Managers Certification',
       desc: 'Comprehensive qualification in equity portfolio construction, asset allocation, alpha-beta decomposition, performance attribution, and regulatory compliance under SEBI (Portfolio Managers) Regulations.'
     },
     {
       series: 'NISM Series VII',
       title: 'Securities Operations and Risk Management',
-      desc: 'Specialized certification in end-to-end trade lifecycle, clearing and settlement mechanisms, margin requirements, liquidity safeguards, and systemic risk mitigation.'
+      desc: 'Specialized certification covering end-to-end trade lifecycle, clearing and settlement mechanisms, margin requirements, liquidity safeguards, and systemic risk mitigation.'
     },
     {
-      series: 'NISM Series X(A & B)',
+      series: 'NISM Series X (A & B)',
       title: 'Investment Adviser Certification (Level 1 & 2)',
-      desc: 'Advanced fiduciary credentials for comprehensive financial planning, retirement advisory, tax structuring, and personal risk profiling.'
+      desc: 'Statutory fiduciary credentials for comprehensive financial planning, retirement advisory, and personal risk profiling.'
     },
     {
       series: 'NISM Series V(B)',
@@ -36,132 +36,113 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
   ];
 
   const galleryImages = [
-    { src: '/assets/images/img_4.jpg', caption: 'Budget Day Trading Session (+₹4.15 Lakh Profit)' },
-    { src: '/assets/images/img_3.jpg', caption: 'Founder Mann Jain at Sixth Sense Trading Desk' },
-    { src: '/assets/images/img_18.jpg', caption: 'Official Services Portfolio & Palghar Event' },
-    { src: '/assets/images/img_20.jpg', caption: 'Dehradun National Trading League Announcement' },
-    { src: '/assets/images/img_2.jpg', caption: 'Live Price Action Masterclass & Mentee Session' },
-    { src: '/assets/images/img_12.jpg', caption: 'Community & Student Recognition Ceremony' },
-    { src: '/assets/images/img_21.jpg', caption: 'Trading Team Strategy Briefing' },
-    { src: '/assets/images/img_11.jpg', caption: 'Evening Market Wrap-up & Alpha Review' },
-    { src: '/assets/images/profile_pic_150.jpg', caption: 'Official Sixth Sense Investments Seal' }
+    { src: '/assets/images/img_4.jpg', caption: 'Budget day terminal execution (+₹4.15 Lakh net alpha)' },
+    { src: '/assets/images/img_3.jpg', caption: 'Founder Mann Jain at the trading terminal' },
+    { src: '/assets/images/img_18.jpg', caption: 'Services portfolio presentation at Palghar' },
+    { src: '/assets/images/img_20.jpg', caption: 'National Trading League Dehradun 2026 delegation' },
+    { src: '/assets/images/img_2.jpg', caption: 'Live price action mentorship cohort' },
+    { src: '/assets/images/img_12.jpg', caption: 'Annual student and client recognition assembly' },
+    { src: '/assets/images/img_21.jpg', caption: 'Quantitative trade briefing session' },
+    { src: '/assets/images/img_11.jpg', caption: 'Post-market alpha and risk attribution review' }
   ];
 
   return (
-    <div className="pt-32 pb-24 space-y-20">
+    <div className="pt-36 pb-24 space-y-24 text-left">
       {/* HEADER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-left space-y-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold text-amber-400">
-            <Award className="w-3.5 h-3.5" />
-            <span>Firm Heritage & Founder Profile</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">
-            Bridging Retail Trading with <span className="gold-gradient-text">Institutional Precision</span>
+        <div className="space-y-4 max-w-3xl">
+          <p className="text-xs text-[#d4af37] font-medium tracking-wide">
+            Firm history & governance
+          </p>
+          <h1 className="font-serif text-4xl sm:text-6xl text-[#f1f4f8] leading-[1.08] tracking-tight">
+            Bridging retail trading with institutional precision.
           </h1>
-          <p className="text-slate-300 text-base leading-relaxed">
-            Founded by <strong>Mann Jain</strong>, Sixth Sense Investments has established itself as a premier 
-            financial research and wealth advisory firm anchored by regulatory compliance, 
-            quantitative price-action models, and strategic institutional partnerships.
+          <p className="text-base sm:text-lg text-[#8b9bb4] leading-relaxed font-normal">
+            Founded by Mann Jain, Sixth Sense Investments operates on an uncompromising fiduciary philosophy: capital preservation first, mechanical execution, and verifiable compliance under SEBI regulations.
           </p>
         </div>
       </section>
 
       {/* FOUNDER DEEP DIVE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
-                <img 
-                  src="/assets/images/img_3.jpg" 
-                  alt="Mann Jain Founder" 
-                  className="w-full h-96 object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="text-xs uppercase font-bold text-amber-400">Founder & SEBI R.A.</div>
-                  <div className="text-2xl font-black text-white">Mann Jain</div>
-                  <p className="text-xs text-slate-300 mt-0.5">5+ Years Registered Investment Advisory Track Record</p>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-5 space-y-3">
+            <div className="aspect-[3/4] rounded-xl overflow-hidden bg-[#121720]">
+              <img 
+                src="/assets/images/img_3.jpg" 
+                alt="Mann Jain, Founder & Research Analyst" 
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <p className="text-xs text-[#8b9bb4]">
+              Mann Jain · SEBI Registered Research Analyst · Founder, Sixth Sense Investments
+            </p>
+          </div>
+
+          <div className="lg:col-span-7 space-y-6">
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
+              The journey from screen hours to institutional rigor
+            </h2>
+
+            <div className="space-y-4 text-sm text-[#8b9bb4] leading-relaxed">
+              <p>
+                "We started with zero knowledge, just like everyone else. But through thousands of hours observing real market auction dynamics, testing hypotheses, and establishing strict loss boundaries, we mastered the science of asymmetric risk."
+              </p>
+              <p>
+                Operating across Palghar, Mumbai, and pan-India client networks, Mann Jain has trained dozens of proprietary traders and advised investors across varied wealth brackets.
+              </p>
             </div>
 
-            <div className="lg:col-span-7 space-y-5 text-left">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                The Journey: From Market Fascination to Institutional Rigor
-              </h2>
-
-              <p className="text-sm text-slate-300 leading-relaxed">
-                "We started with zero knowledge, just like everyone else. But through thousands of screen hours, 
-                rigorous backtesting, and an uncompromising respect for risk management, we mastered the craft 
-                of extracting statistical alpha."
-              </p>
-
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Based out of Palghar and Mumbai with operations expanding across India, Mann Jain has trained dozens 
-                of active traders and advised high-net-worth investors on systematic capital allocation. His approach 
-                is defined by three core pillars:
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                <div className="bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
-                  <span className="text-xs font-bold text-amber-400">01. No Overthinking</span>
-                  <p className="text-xs text-slate-400 mt-1">Pre-market preparation dictates every trade. Execution is mechanical.</p>
-                </div>
-                <div className="bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
-                  <span className="text-xs font-bold text-amber-400">02. Fiduciary Trust</span>
-                  <p className="text-xs text-slate-400 mt-1">Direct custody and complete regulatory transparency for every client rupee.</p>
-                </div>
-                <div className="bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
-                  <span className="text-xs font-bold text-amber-400">03. Asymmetric Alpha</span>
-                  <p className="text-xs text-slate-400 mt-1">Never risk ₹1 to make ₹1. Target minimum 1:3 risk-to-reward setups.</p>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+              <div className="space-y-1">
+                <span className="text-xs text-[#d4af37] font-medium">01 · Methodical</span>
+                <p className="text-xs text-[#8b9bb4]">Pre-market scenarios dictate every execution. Emotion has no seat at the desk.</p>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs text-[#d4af37] font-medium">02 · Fiduciary</span>
+                <p className="text-xs text-[#8b9bb4]">Direct institutional custody with full statutory transparency under SEBI rules.</p>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs text-[#d4af37] font-medium">03 · Asymmetric</span>
+                <p className="text-xs text-[#8b9bb4]">Never risk ₹1 to make ₹1. We target minimum 1:3 reward-to-risk setups.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ADITYA BIRLA CAPITAL ASSOCIATION */}
+      {/* STRATEGIC ALLIANCE: ADITYA BIRLA CAPITAL */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass-card rounded-3xl p-8 sm:p-12 border border-slate-800 space-y-8 text-left bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-slate-800">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-bold text-amber-400 mb-2">
-                <Building2 className="w-3.5 h-3.5" />
-                <span>Authorized Channel Alignment</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                Institutional Partnership: Aditya Birla Capital
+        <div className="bg-[#121720] rounded-xl p-8 sm:p-12 space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
+            <div className="space-y-2">
+              <p className="text-xs text-[#d4af37] font-medium">Authorized channel alliance</p>
+              <h2 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8]">
+                Aditya Birla Capital institutional partnership
               </h2>
             </div>
-            <div className="flex items-center gap-2 bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl text-xs font-semibold text-slate-300">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Depository Security & Direct Custody</span>
+            <div className="text-xs text-[#8b9bb4]">
+              Direct demat custody and depository clearing
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-300 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-[#8b9bb4]">
             <div className="space-y-2">
-              <h4 className="font-bold text-white text-base">Direct Institutional Execution</h4>
-              <p className="text-xs text-slate-400">
-                Clients of Sixth Sense Investments benefit from the institutional infrastructure, high-speed order routing, 
-                and robust depository facilities provided by Aditya Birla Capital.
+              <h3 className="text-base font-serif text-[#f1f4f8]">Institutional order execution</h3>
+              <p className="leading-relaxed">
+                Sixth Sense Investments clients utilize high-speed routing engines, institutional liquidity pools, and advanced depository operations powered by Aditya Birla Capital.
               </p>
             </div>
             <div className="space-y-2">
-              <h4 className="font-bold text-white text-base">SEBI-Regulated PMS Framework</h4>
-              <p className="text-xs text-slate-400">
-                Portfolio Management Services are managed with institutional oversight, professional custodial auditing, 
-                and direct demat account segregation for complete capital safety.
+              <h3 className="text-base font-serif text-[#f1f4f8]">Regulated PMS frameworks</h3>
+              <p className="leading-relaxed">
+                Portfolio Management Services follow strict regulatory boundaries, independent accounting audits, and segregation of client holdings into individual demat accounts.
               </p>
             </div>
             <div className="space-y-2">
-              <h4 className="font-bold text-white text-base">Priority Primary Market Bidding</h4>
-              <p className="text-xs text-slate-400">
-                Direct syndicate coordination for Initial Public Offerings (IPO distribution) and Registrar & Transfer 
-                Agent (RTA) services, ensuring seamless subscription and allotment tracking.
+              <h3 className="text-base font-serif text-[#f1f4f8]">Primary market syndicate</h3>
+              <p className="leading-relaxed">
+                Direct access to IPO distribution pipelines and direct liaison for physical share conversions via institutional Registrar & Transfer Agent desks.
               </p>
             </div>
           </div>
@@ -170,74 +151,80 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
 
       {/* REGULATORY CERTIFICATIONS (NISM & SEBI) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
-        <div className="text-left space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold text-amber-400">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Statutory Compliance Matrix</span>
-          </div>
-          <h2 className="text-3xl font-bold text-white tracking-tight">
-            NISM Certifications & SEBI Registration
+        <div className="space-y-2 max-w-2xl">
+          <p className="text-xs text-[#d4af37] font-medium">Compliance matrix</p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
+            Statutory NISM certifications
           </h2>
-          <p className="text-slate-400 text-sm">
-            Strict adherence to the regulatory standards set by the Securities and Exchange Board of India (SEBI).
+          <p className="text-sm text-[#8b9bb4]">
+            Official qualifications verified under the National Institute of Securities Markets and SEBI guidelines.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-6">
           {certifications.map((cert, idx) => (
-            <div key={idx} className="glass-card rounded-2xl p-6 border border-slate-800 space-y-3 text-left">
-              <span className="text-xs font-extrabold gold-gradient-text tracking-wider uppercase block">
-                {cert.series}
-              </span>
-              <h3 className="text-base font-bold text-white">{cert.title}</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">{cert.desc}</p>
+            <div key={idx} className="py-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+              <div className="md:col-span-4 space-y-1">
+                <span className="text-xs text-[#d4af37] font-medium">{cert.series}</span>
+                <h3 className="font-serif text-lg text-[#f1f4f8]">{cert.title}</h3>
+              </div>
+              <div className="md:col-span-8">
+                <p className="text-sm text-[#8b9bb4] leading-relaxed">{cert.desc}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* AUTHENTIC INSTAGRAM ASSET GALLERY */}
+      {/* AUTHENTIC GALLERY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
-        <div className="text-left space-y-2">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Live From The Desk</span>
-          <h2 className="text-3xl font-bold text-white tracking-tight">
-            Authentic Visual Record (@sixthsenseinvestments)
+        <div className="space-y-2">
+          <p className="text-xs text-[#d4af37] font-medium">Archival record</p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
+            Field documentation & live desk
           </h2>
-          <p className="text-slate-400 text-sm">
-            Real media captured across trading sessions, events, awards, and mentorship masterclasses.
+          <p className="text-sm text-[#8b9bb4]">
+            Photographs from live trading sessions, community mentoring, and national championship announcements.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {galleryImages.map((img, idx) => (
-            <div key={idx} className="glass-card rounded-2xl overflow-hidden border border-slate-800 group">
-              <div className="h-64 overflow-hidden bg-slate-900">
+            <figure key={idx} className="space-y-2.5">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
                 <img 
                   src={img.src} 
                   alt={img.caption} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-4 bg-slate-950 text-left border-t border-slate-800">
-                <p className="text-xs font-medium text-slate-300">{img.caption}</p>
-              </div>
-            </div>
+              <figcaption className="text-xs text-[#8b9bb4] leading-snug">
+                {img.caption}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 pt-10">
-        <h2 className="text-3xl font-bold text-white">Experience Institutional Financial Intelligence</h2>
-        <p className="text-slate-300 text-sm max-w-xl mx-auto">
-          Schedule a one-on-one portfolio consultation with Mann Jain to evaluate your risk exposure and compounding roadmap.
-        </p>
-        <button
-          onClick={onOpenBooking}
-          className="px-8 py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold rounded-xl text-sm shadow-xl shadow-amber-500/20 hover:from-amber-400 hover:to-amber-500 transition-all active:scale-95 uppercase tracking-wider"
-        >
-          Book Consultation Now
-        </button>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-10">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-2">
+            <h2 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8]">
+              Ready to evaluate your portfolio structure?
+            </h2>
+            <p className="text-sm text-[#8b9bb4]">
+              Schedule a direct consultation with Founder Mann Jain.
+            </p>
+          </div>
+          <button
+            onClick={onOpenBooking}
+            className="px-8 py-3.5 bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] font-medium rounded text-sm transition-colors flex items-center gap-2 self-start md:self-auto"
+          >
+            <span>Book consultation</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
       </section>
     </div>
   );
