@@ -10,7 +10,6 @@ import { Academy } from './pages/Academy';
 import { BlogPage } from './pages/Blog';
 import { BlogPost } from './pages/BlogPost';
 import { Contact } from './pages/Contact';
-import { Admin } from './pages/Admin';
 
 export function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
@@ -22,15 +21,12 @@ export function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '').trim();
-      const path = window.location.pathname;
 
-      if (path.includes('admin') || hash === 'admin' || hash === 'sixthsenseinvestments-admin') {
-        setCurrentPage('admin');
-      } else if (hash.startsWith('blog/')) {
+      if (hash.startsWith('blog/')) {
         const slug = hash.replace('blog/', '');
         setSelectedBlogSlug(slug);
         setCurrentPage('blog-post');
-      } else if (hash && ['home', 'about', 'services', 'academy', 'blog', 'contact', 'admin'].includes(hash)) {
+      } else if (hash && ['home', 'about', 'services', 'academy', 'blog', 'contact'].includes(hash)) {
         setCurrentPage(hash);
       }
     };
@@ -105,10 +101,6 @@ export function App() {
         {currentPage === 'contact' && (
           <Contact />
         )}
-
-        {currentPage === 'admin' && (
-          <Admin />
-        )}
       </main>
 
       {/* Global Booking Consultation Modal */}
@@ -118,10 +110,8 @@ export function App() {
         initialService={bookingService} 
       />
 
-      {/* Sticky Mobile Action Bar (hidden in admin) */}
-      {currentPage !== 'admin' && (
-        <StickyMobileBar onOpenBooking={() => handleOpenBooking()} />
-      )}
+      {/* Sticky Mobile Action Bar */}
+      <StickyMobileBar onOpenBooking={() => handleOpenBooking()} />
 
       {/* Institutional Footer */}
       <Footer onNavigate={navigateTo} />

@@ -59,17 +59,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
         {/* Action CTAs */}
         <div className="hidden sm:flex items-center gap-4">
-          <button 
-            onClick={() => onNavigate('admin')}
-            className={`text-xs transition-colors px-2 py-1 ${
-              currentPage === 'admin' 
-                ? 'text-white font-semibold' 
-                : 'text-[#7d8898] hover:text-white'
-            }`}
-          >
-            Admin HQ
-          </button>
-
           <button
             onClick={() => onNavigate('contact')}
             className="px-4 py-2 bg-[#d4af37] hover:bg-[#c49f2e] text-[#090c10] font-semibold text-xs tracking-normal transition-colors rounded-none"
@@ -116,15 +105,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               className="w-full py-2.5 bg-[#d4af37] text-[#090c10] font-semibold text-xs text-center"
             >
               Consult Advisory
-            </button>
-            <button
-              onClick={() => {
-                onNavigate('admin');
-                setIsOpen(false);
-              }}
-              className="w-full py-2 text-[#7d8898] text-xs text-center"
-            >
-              Admin HQ
             </button>
           </div>
         </div>

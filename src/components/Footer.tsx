@@ -56,14 +56,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <p>Palghar Commercial Center & Mumbai Corporate Branch</p>
               <p>advisory@sixthsenseinvestments.com</p>
               <p>WhatsApp: +91 98765 43210</p>
-              <div className="pt-2">
-                <button 
-                  onClick={() => onNavigate('admin')}
-                  className="text-xs text-[#d4af37] hover:underline"
-                >
-                  Admin HQ Access
-                </button>
-              </div>
             </div>
           </div>
 
