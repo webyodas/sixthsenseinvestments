@@ -36,14 +36,14 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
   ];
 
   const galleryImages = [
+    { src: '/assets/images/logo_gold.png', caption: 'Official Sixth Sense Investments brand monogram' },
     { src: '/assets/images/img_4.jpg', caption: 'Budget day terminal execution (+₹4.15 Lakh net alpha)' },
     { src: '/assets/images/img_3.jpg', caption: 'Founder Mann Jain at the trading terminal' },
     { src: '/assets/images/img_18.jpg', caption: 'Services portfolio presentation at Palghar' },
     { src: '/assets/images/img_20.jpg', caption: 'National Trading League Dehradun 2026 delegation' },
     { src: '/assets/images/img_2.jpg', caption: 'Live price action mentorship cohort' },
     { src: '/assets/images/img_12.jpg', caption: 'Annual student and client recognition assembly' },
-    { src: '/assets/images/img_21.jpg', caption: 'Quantitative trade briefing session' },
-    { src: '/assets/images/img_11.jpg', caption: 'Post-market alpha and risk attribution review' }
+    { src: '/assets/images/img_21.jpg', caption: 'Quantitative trade briefing session' }
   ];
 
   return (

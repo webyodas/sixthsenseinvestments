@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface NavbarProps {
   currentPage: string;
@@ -28,11 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           onClick={() => onNavigate('home')}
           className="flex items-center gap-3 text-left"
         >
-          <img 
-            src="/assets/images/profile_pic_150.jpg" 
-            alt="Sixth Sense Investments" 
-            className="w-8 h-8 rounded-full object-cover"
-          />
+          <Logo className="w-8 h-8 text-[#d4af37]" variant="gold" />
           <div>
             <span className="text-base font-medium tracking-tight text-white block leading-none font-editorial">
               Sixth Sense Investments

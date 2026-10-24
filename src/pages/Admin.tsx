@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { api } from '../services/api';
 import { Lead, Blog } from '../types';
+import { Logo } from '../components/Logo';
 
 export const Admin: React.FC = () => {
   // Auth state
@@ -190,8 +191,8 @@ export const Admin: React.FC = () => {
     return (
       <div data-ui="admin-login" className="pt-40 pb-28 min-h-[80vh] flex items-center justify-center px-4">
         <div className="bg-[#121720] max-w-md w-full rounded-2xl p-8 text-center space-y-6">
-          <div className="w-12 h-12 bg-[#1a2230] rounded-xl flex items-center justify-center mx-auto text-[#d4af37]">
-            <Lock className="w-6 h-6" />
+          <div className="w-14 h-14 bg-[#1a2230] rounded-xl flex items-center justify-center mx-auto">
+            <Logo className="w-8 h-8 text-[#d4af37]" variant="gold" />
           </div>
 
           <div className="space-y-1">
@@ -236,14 +237,17 @@ export const Admin: React.FC = () => {
         
         {/* TOP ADMIN HEADER */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span className="text-xs text-emerald-400 font-medium">Cloudflare D1 Live Connected</span>
+          <div className="flex items-center gap-3">
+            <Logo className="w-8 h-8 text-[#d4af37]" variant="gold" />
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span className="text-xs text-emerald-400 font-medium">Cloudflare D1 Live Connected</span>
+              </div>
+              <h1 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8] mt-1">
+                Sixth Sense Investments — Admin HQ
+              </h1>
             </div>
-            <h1 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8] mt-1">
-              Sixth Sense Investments — Admin HQ
-            </h1>
           </div>
 
           <div className="flex items-center gap-3">

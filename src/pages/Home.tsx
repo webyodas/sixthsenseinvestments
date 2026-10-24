@@ -3,6 +3,7 @@ import { ShieldCheck, ArrowRight, ChevronRight, Check } from 'lucide-react';
 import { SERVICES } from '../data/servicesData';
 import { LeadForm } from '../components/LeadForm';
 import { Calculator } from '../components/Calculator';
+import { Logo } from '../components/Logo';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -19,7 +20,11 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
             
             {/* Left Column: Editorial Proposition */}
             <div className="lg:col-span-7 space-y-8 text-left">
-              <div className="space-y-3">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Logo className="w-8 h-8 text-[#d4af37]" variant="gold" />
+                  <span className="text-xs text-[#8b9bb4] font-medium">Sixth Sense Investments</span>
+                </div>
                 <p className="text-xs text-[#d4af37] font-medium tracking-wide">
                   SEBI Registration INZXXXXX8032 · NISM Series V to XXI
                 </p>

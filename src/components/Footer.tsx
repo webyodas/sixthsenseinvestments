@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -14,9 +15,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16">
           
           <div className="md:col-span-5 space-y-4 text-left">
-            <h3 className="text-xl font-normal text-white font-editorial">
-              Sixth Sense Investments
-            </h3>
+            <div className="flex items-center gap-3">
+              <Logo className="w-6 h-6 text-[#d4af37]" variant="gold" />
+              <h3 className="text-xl font-normal text-white font-editorial">
+                Sixth Sense Investments
+              </h3>
+            </div>
             <p className="text-xs text-[#8b95a5] leading-relaxed max-w-sm">
               Founded by Mann Jain. Quantitative equity trading, Portfolio Management Services (PMS), 
               and institutional research advisory in strategic association with Aditya Birla Capital.
