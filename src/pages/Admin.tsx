@@ -132,7 +132,7 @@ export const Admin: React.FC = () => {
       excerpt: '',
       content: '',
       author: 'Mann Jain (Founder & SEBI R.A.)',
-      cover_image: '/assets/images/img_4.jpg',
+      cover_image: '/assets/images/img_18.jpg',
       status: 'Published',
       read_time: '4 min read'
     });

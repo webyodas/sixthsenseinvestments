@@ -83,7 +83,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ slug, onBack, onOpenBooking 
         <div className="flex items-center gap-3 pt-4 text-xs">
           <div className="w-8 h-8 rounded-full overflow-hidden bg-[#121720]">
             <img 
-              src="/assets/images/profile_pic_150.jpg" 
+              src="/assets/images/mann_jain_avatar.jpg" 
               alt="Mann Jain" 
               className="w-full h-full object-cover"
             />

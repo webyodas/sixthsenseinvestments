@@ -75,13 +75,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
               <figure className="space-y-3">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#121720]">
                   <img 
-                    src="/assets/images/img_4.jpg" 
-                    alt="Mann Jain at Sixth Sense Investments trading desk" 
-                    className="w-full h-full object-cover"
+                    src="/assets/images/img_18.jpg" 
+                    alt="Budget day execution terminal at Sixth Sense Investments Palghar desk" 
+                    className="w-full h-full object-cover object-bottom"
                   />
                 </div>
                 <figcaption className="text-left text-xs text-[#8b9bb4] flex justify-between items-baseline px-1">
-                  <span>Mann Jain, SEBI Registered Research Analyst</span>
+                  <span>Budget Day Execution Terminal</span>
                   <span className="text-[#d4af37]">Palghar trading desk</span>
                 </figcaption>
               </figure>
@@ -333,12 +333,12 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
                 <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#090c10]">
                   <img 
                     src="/assets/images/img_20.jpg" 
-                    alt="Dehradun 2026 Sixth Sense Investments announcement" 
+                    alt="Mann Jain at Sixth Sense Investments proprietary trading station" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <figcaption className="text-xs text-[#8b9bb4]">
-                  Official Dehradun 2026 trading delegation announcement
+                  Proprietary algorithmic execution station & research desk
                 </figcaption>
               </figure>
             </div>

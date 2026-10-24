@@ -97,7 +97,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       content,
       category || 'Market Insights',
       author || 'Mann Jain (Founder & SEBI R.A.)',
-      cover_image || '/assets/images/img_4.jpg',
+      cover_image || '/assets/images/img_18.jpg',
       status || 'Published',
       read_time || '4 min read'
     ).run();

@@ -118,12 +118,12 @@ export const Academy: React.FC<AcademyProps> = ({ onApply }) => {
                 <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#090c10]">
                   <img 
                     src="/assets/images/img_20.jpg" 
-                    alt="Dehradun 2026 Official Delegation Poster" 
+                    alt="Mann Jain at Sixth Sense quantitative trading station" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <figcaption className="text-xs text-[#8b9bb4]">
-                  Official Dehradun 2026 Trading Championship poster
+                  Proprietary execution setup & live market simulation lab
                 </figcaption>
               </figure>
             </div>
@@ -168,21 +168,21 @@ export const Academy: React.FC<AcademyProps> = ({ onApply }) => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <figure className="space-y-2">
             <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
-              <img src="/assets/images/img_2.jpg" alt="Mentorship session" className="w-full h-full object-cover" />
+              <img src="/assets/images/img_2.jpg" alt="Mentorship briefing with Mann Jain" className="w-full h-full object-cover" />
             </div>
-            <figcaption className="text-xs text-[#8b9bb4]">Live price-action masterclass</figcaption>
+            <figcaption className="text-xs text-[#8b9bb4]">Mentorship briefing with Founder Mann Jain</figcaption>
           </figure>
           <figure className="space-y-2">
             <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
-              <img src="/assets/images/img_12.jpg" alt="Student ceremony" className="w-full h-full object-cover" />
+              <img src="/assets/images/img_18.jpg" alt="Live execution terminal" className="w-full h-full object-cover object-bottom" />
             </div>
-            <figcaption className="text-xs text-[#8b9bb4]">Mentee graduation & awards ceremony</figcaption>
+            <figcaption className="text-xs text-[#8b9bb4]">Budget Day terminal tracking & live execution</figcaption>
           </figure>
           <figure className="space-y-2">
             <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
-              <img src="/assets/images/img_21.jpg" alt="Strategy briefing" className="w-full h-full object-cover" />
+              <img src="/assets/images/img_12.jpg" alt="Partner exhibition banner" className="w-full h-full object-cover" />
             </div>
-            <figcaption className="text-xs text-[#8b9bb4]">Morning execution planning</figcaption>
+            <figcaption className="text-xs text-[#8b9bb4]">Aditya Birla Capital partner exhibition at Palghar</figcaption>
           </figure>
         </div>
       </section>

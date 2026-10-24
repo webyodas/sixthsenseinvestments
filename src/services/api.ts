@@ -19,7 +19,7 @@ Before 11:00 AM, volatility was artificially pricing in extreme outcomes across 
 No overthinking. No panic adjustments. You design the risk matrix before the market opens, respect stop-losses unconditionally, and let the statistical edge do the work.`,
     category: 'Case Studies',
     author: 'Mann Jain (Founder & SEBI R.A.)',
-    cover_image: '/assets/images/img_4.jpg',
+    cover_image: '/assets/images/img_18.jpg',
     status: 'Published',
     read_time: '5 min read',
     created_at: '2026-02-01T15:30:00Z'
@@ -39,7 +39,7 @@ No overthinking. No panic adjustments. You design the risk matrix before the mar
 Contact our advisory desk to review your existing equity portfolio against institutional benchmarks.`,
     category: 'Wealth Advisory',
     author: 'Mann Jain (Founder & SEBI R.A.)',
-    cover_image: '/assets/images/img_18.jpg',
+    cover_image: '/assets/images/img_3.jpg',
     status: 'Published',
     read_time: '4 min read',
     created_at: '2026-02-15T11:00:00Z'
