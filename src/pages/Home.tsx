@@ -88,18 +88,18 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
               <figure className="space-y-3 relative">
                 <div className="aspect-[4/5] rounded-xl overflow-hidden bg-[#121720] relative">
                   <img 
-                    src="/assets/images/img_3.jpg" 
-                    alt="Mann Jain, Founder & Research Analyst - Sixth Sense Investments in partnership with Aditya Birla Capital" 
+                    src="/assets/images/img_20.jpg" 
+                    alt="Founder Mann Jain at Sixth Sense quantitative trading station in Palghar" 
                     className="w-full h-full object-cover object-top"
                   />
                   {/* Floating Official Alliance Badge on the image */}
-                  <div className="absolute top-4 right-4 bg-[#090c10]/95 backdrop-blur-md border border-[#1e2638] rounded-lg px-3 py-2 flex items-center gap-2.5 shadow-xl">
+                  <div className="absolute top-4 right-4 bg-[#090c10] border border-[#1e2638] rounded-lg px-3 py-2 flex items-center gap-2.5">
                     <img 
                       src="/assets/images/aditya_birla_sun.png" 
                       alt="Aditya Birla Capital Emblem" 
                       className="h-5 w-auto object-contain"
                     />
-                    <div className="text-left border-l border-[#1e2638] pl-2.5">
+                    <div className="text-left pl-2.5">
                       <span className="block text-[9px] text-[#8b9bb4] uppercase tracking-wider font-medium">Channel Alliance</span>
                       <span className="block text-xs font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
                     </div>
@@ -146,7 +146,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none" />
 
           {/* Section Header with Official Dual Branding */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-8 border-b border-[#1e2638]">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-8">
             <div className="space-y-3 max-w-3xl">
               <div className="flex items-center gap-2 text-xs text-[#d4af37] font-medium">
                 <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
@@ -161,13 +161,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
             </div>
 
             {/* Official Aditya Birla Capital Logo Crest Card */}
-            <div className="p-4 rounded-xl bg-[#090c10] border border-[#1e2638] flex items-center gap-4 shrink-0 shadow-lg">
+            <div className="p-4 rounded-xl bg-[#090c10] border border-[#1e2638] flex items-center gap-4 shrink-0">
               <img 
                 src="/assets/images/aditya_birla_sun.png" 
                 alt="Aditya Birla Capital Official Emblem" 
                 className="h-10 w-auto object-contain"
               />
-              <div className="text-left border-l border-[#1e2638] pl-3.5 pr-1">
+              <div className="text-left pl-3.5 pr-1">
                 <span className="block text-[10px] text-[#8b9bb4] font-medium uppercase tracking-wider">Corporate Alliance</span>
                 <span className="block text-base font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
                 <span className="block text-xs text-[#d4af37]">Stocks & Securities Desk</span>
@@ -175,7 +175,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
             </div>
           </div>
 
-          {/* Core Institutional Synergy Pillars */}
+          {/* Core Institutional Alliance Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <div className="p-6 rounded-xl bg-[#090c10]/80 border border-[#1e2638] space-y-3">
@@ -223,7 +223,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
           {/* Authentic Founder Quote & Institutional Disclosures */}
           <div className="p-6 rounded-xl bg-[#090c10] border border-[#1e2638] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-start gap-4 max-w-2xl text-left">
-              <div className="w-10 h-10 rounded-xl bg-[#121720] border border-[#d4af37]/40 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-[#121720] border border-[#d4af37]/40 flex items-center justify-center shrink-0 mt-0.5">
                 <Logo className="w-5 h-5 text-[#d4af37]" variant="gold" />
               </div>
               <div className="space-y-1">
@@ -437,13 +437,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
               <figure className="space-y-3">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#090c10]">
                   <img 
-                    src="/assets/images/img_20.jpg" 
-                    alt="Mann Jain announcing Dehradun 2026 National Competition at Sixth Sense trading station" 
+                    src="/assets/images/img_6.jpg" 
+                    alt="Mann Jain conducting strategy breakdown at Sixth Sense Palghar desk" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <figcaption className="text-xs text-[#8b9bb4]">
-                  Dehradun 2026 National Competition Announcement · Mann Jain at the proprietary execution station
+                  Dehradun 2026 National Competition Announcement · Strategy walkthrough with Founder Mann Jain
                 </figcaption>
               </figure>
             </div>

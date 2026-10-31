@@ -99,7 +99,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
               alt="Aditya Birla Capital" 
               className="h-8 w-auto object-contain"
             />
-            <div className="text-left border-l border-[#1e2638] pl-3 pr-2">
+            <div className="text-left pl-3 pr-2">
               <span className="block text-xs font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
               <span className="block text-[11px] text-[#8b9bb4]">Institutional Custody</span>
               <span className="block text-[10px] text-[#d4af37]">SEBI Reg. Depository</span>

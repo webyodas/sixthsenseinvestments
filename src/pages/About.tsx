@@ -45,11 +45,11 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
 
   const tradingDeskImages: ImageCardItem[] = [
     { 
-      src: '/assets/images/img_3.jpg', 
-      title: 'Aditya Birla Capital Strategic Partnership',
-      category: 'Corporate Alliance',
+      src: '/assets/images/img_6.jpg', 
+      title: 'Desk Market Briefing & Fiduciary Governance',
+      category: 'Executive Commentary',
       partnerLogo: '/assets/images/aditya_birla_capital.png',
-      caption: 'Official partner announcement featuring Founder Mann Jain in formal attire with Aditya Birla Capital Stocks & Securities.' 
+      caption: 'Founder Mann Jain conducting a live strategy walkthrough and risk breakdown from the Sixth Sense Palghar desk.' 
     },
     { 
       src: '/assets/images/img_18.jpg', 
@@ -70,14 +70,8 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
       caption: 'Video masterclass thumbnail with Mann Jain outlining the journey from zero retail knowledge to institutional strategy.' 
     },
     { 
-      src: '/assets/images/img_6.jpg', 
-      title: 'Desk Market Briefing & Risk Governance',
-      category: 'Executive Commentary',
-      caption: 'Founder Mann Jain conducting a live strategy walkthrough and risk breakdown from his Palghar office.' 
-    },
-    { 
       src: '/assets/images/img_5.jpg', 
-      title: 'Beyond the Desk: GT 650 Night Ride',
+      title: 'Beyond the Desk: GT 650 Discipline',
       category: 'Founder Life & Passions',
       caption: 'Mann Jain with his Royal Enfield Continental GT 650 cafe racer, balancing high-stakes execution with personal discipline.' 
     }
@@ -145,8 +139,8 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
           <div className="lg:col-span-5 space-y-3">
             <div className="aspect-[3/4] rounded-xl overflow-hidden bg-[#121720]">
               <img 
-                src="/assets/images/img_3.jpg" 
-                alt="Mann Jain, Founder & Research Analyst" 
+                src="/assets/images/img_20.jpg" 
+                alt="Mann Jain, Founder & Research Analyst at Sixth Sense quantitative trading station" 
                 className="w-full h-full object-cover object-top"
               />
             </div>
