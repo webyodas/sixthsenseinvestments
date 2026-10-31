@@ -24,9 +24,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
             <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded bg-[#121720] border border-[#1e2638]">
               <img 
-                src="/assets/images/aditya_birla_capital.png" 
+                src="/assets/images/aditya_birla_sun.png" 
                 alt="Aditya Birla Capital" 
-                className="w-5 h-5 object-contain rounded-xs" 
+                className="h-4 w-auto object-contain" 
               />
               <span className="text-[11px] text-[#8b95a5]">
                 Authorized Channel Partner · <strong className="text-white font-medium">Aditya Birla Capital</strong>

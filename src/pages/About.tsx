@@ -278,7 +278,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">{img.category}</span>
                   {img.partnerLogo && (
-                    <img src={img.partnerLogo} alt="Partner Logo" className="w-4 h-4 object-contain rounded-xs" />
+                    <img src={img.partnerLogo} alt="Partner Logo" className="h-3.5 w-auto object-contain" />
                   )}
                 </div>
                 <h3 className="font-serif text-base text-[#f1f4f8]">{img.title}</h3>
@@ -317,7 +317,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">{img.category}</span>
                   {img.partnerLogo && (
-                    <img src={img.partnerLogo} alt="Partner Logo" className="w-4 h-4 object-contain rounded-xs" />
+                    <img src={img.partnerLogo} alt="Partner Logo" className="h-3.5 w-auto object-contain" />
                   )}
                 </div>
                 <h3 className="font-serif text-base text-[#f1f4f8]">{img.title}</h3>

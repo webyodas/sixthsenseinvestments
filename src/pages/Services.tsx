@@ -95,11 +95,11 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
 
           <div className="p-4 rounded-xl bg-[#090c10] border border-[#1e2638] flex items-center gap-3 shrink-0">
             <img 
-              src="/assets/images/aditya_birla_capital.png" 
+              src="/assets/images/aditya_birla_sun.png" 
               alt="Aditya Birla Capital" 
-              className="w-14 h-14 object-contain rounded"
+              className="h-8 w-auto object-contain"
             />
-            <div className="text-left pr-2">
+            <div className="text-left border-l border-[#1e2638] pl-3 pr-2">
               <span className="block text-xs font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
               <span className="block text-[11px] text-[#8b9bb4]">Institutional Custody</span>
               <span className="block text-[10px] text-[#d4af37]">SEBI Reg. Depository</span>

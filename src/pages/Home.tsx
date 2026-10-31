@@ -29,9 +29,9 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
                   <span className="text-[#374151]">/</span>
                   <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#121720] border border-[#1e2638]">
                     <img 
-                      src="/assets/images/aditya_birla_capital.png" 
+                      src="/assets/images/aditya_birla_sun.png" 
                       alt="Aditya Birla Capital" 
-                      className="w-4 h-4 object-contain rounded-xs"
+                      className="h-3.5 w-auto object-contain"
                     />
                     <span className="text-xs text-[#d4af37] font-medium">
                       Aditya Birla Capital Partner
@@ -93,14 +93,14 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
                     className="w-full h-full object-cover object-top"
                   />
                   {/* Floating Official Alliance Badge on the image */}
-                  <div className="absolute top-4 right-4 bg-[#090c10]/90 backdrop-blur-md border border-[#1e2638] rounded-lg p-2.5 flex items-center gap-2.5 shadow-xl">
+                  <div className="absolute top-4 right-4 bg-[#090c10]/95 backdrop-blur-md border border-[#1e2638] rounded-lg px-3 py-2 flex items-center gap-2.5 shadow-xl">
                     <img 
-                      src="/assets/images/aditya_birla_capital.png" 
-                      alt="Aditya Birla Capital Logo" 
-                      className="w-8 h-8 object-contain rounded"
+                      src="/assets/images/aditya_birla_sun.png" 
+                      alt="Aditya Birla Capital Emblem" 
+                      className="h-5 w-auto object-contain"
                     />
-                    <div className="text-left">
-                      <span className="block text-[10px] text-[#8b9bb4] uppercase tracking-wider font-medium">Channel Alliance</span>
+                    <div className="text-left border-l border-[#1e2638] pl-2.5">
+                      <span className="block text-[9px] text-[#8b9bb4] uppercase tracking-wider font-medium">Channel Alliance</span>
                       <span className="block text-xs font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
                     </div>
                   </div>
@@ -163,12 +163,12 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
             {/* Official Aditya Birla Capital Logo Crest Card */}
             <div className="p-4 rounded-xl bg-[#090c10] border border-[#1e2638] flex items-center gap-4 shrink-0 shadow-lg">
               <img 
-                src="/assets/images/aditya_birla_capital.png" 
-                alt="Aditya Birla Capital Official Crest" 
-                className="w-16 h-16 object-contain rounded"
+                src="/assets/images/aditya_birla_sun.png" 
+                alt="Aditya Birla Capital Official Emblem" 
+                className="h-10 w-auto object-contain"
               />
-              <div className="text-left pr-2">
-                <span className="block text-[11px] text-[#8b9bb4] font-medium uppercase tracking-wider">Strategic Alliance</span>
+              <div className="text-left border-l border-[#1e2638] pl-3.5 pr-1">
+                <span className="block text-[10px] text-[#8b9bb4] font-medium uppercase tracking-wider">Corporate Alliance</span>
                 <span className="block text-base font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
                 <span className="block text-xs text-[#d4af37]">Stocks & Securities Desk</span>
               </div>
