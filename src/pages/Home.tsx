@@ -6,15 +6,15 @@ import { Calculator } from '../components/Calculator';
 import { Logo } from '../components/Logo';
 
 interface HomeProps {
-  onNavigate: (page: string) => void;
-  onOpenBooking: () => void;
+  onNavigate: (sectionId: string) => void;
+  onOpenBooking: (serviceTitle?: string) => void;
 }
 
 export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
   return (
     <div className="space-y-24 md:space-y-32">
       {/* HERO SECTION */}
-      <section className="pt-36 md:pt-44 pb-12">
+      <section id="overview" className="pt-36 md:pt-44 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -52,7 +52,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-2">
                 <button
-                  onClick={onOpenBooking}
+                  onClick={() => onOpenBooking()}
                   className="px-8 py-3.5 rounded bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] font-medium text-sm transition-colors flex items-center gap-2"
                 >
                   <span>Schedule portfolio consultation</span>
@@ -60,7 +60,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
                 </button>
 
                 <button
-                  onClick={() => onNavigate('services')}
+                  onClick={() => onNavigate('capabilities')}
                   className="text-sm text-[#f1f4f8] hover:text-[#d4af37] flex items-center gap-1.5 py-2 font-medium transition-colors"
                 >
                   <span>Explore advisory services</span>
@@ -139,7 +139,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
       </section>
 
       {/* INSTITUTIONAL ALLIANCE & ADITYA BIRLA CAPITAL AFFILIATION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section id="alliance" className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="bg-[#121720] border border-[#1e2638] rounded-2xl p-8 sm:p-14 text-left space-y-10 relative overflow-hidden">
           
           {/* Subtle warm ambient highlight */}
@@ -242,17 +242,17 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
 
             <div className="flex items-center gap-3 shrink-0">
               <button
-                onClick={onOpenBooking}
+                onClick={() => onOpenBooking('Aditya Birla Capital Partner Demat Account')}
                 className="px-5 py-2.5 rounded bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] font-medium text-xs transition-colors flex items-center gap-1.5"
               >
                 <span>Open Partner Demat Account</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
               <button
-                onClick={() => onNavigate('about')}
+                onClick={() => onNavigate('track-record')}
                 className="px-4 py-2.5 rounded border border-[#1e2638] text-xs text-[#8b9bb4] hover:text-[#f1f4f8] hover:border-[#8b9bb4] transition-colors"
               >
-                View Disclosures
+                View Live Track Record
               </button>
             </div>
           </div>
@@ -261,7 +261,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
       </section>
 
       {/* EDITORIAL SERVICES INDEX */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12 text-left">
+      <section id="capabilities" className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12 text-left">
         <div className="space-y-3 max-w-2xl">
           <p className="text-xs text-[#d4af37] font-medium">Services index</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
@@ -296,10 +296,10 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
 
               <div className="md:w-1/6 flex md:justify-end items-center">
                 <button
-                  onClick={() => onNavigate('services')}
+                  onClick={() => onOpenBooking(srv.title)}
                   className="text-xs font-medium text-[#f1f4f8] group-hover:text-[#d4af37] flex items-center gap-1 transition-colors"
                 >
-                  <span>Specifications</span>
+                  <span>Inquire</span>
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -309,7 +309,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
       </section>
 
       {/* FOUNDER PROFILE & CREDENTIALS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section id="track-record" className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
           
           <div className="lg:col-span-5 space-y-4">
@@ -369,10 +369,10 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
 
             <div className="pt-2">
               <button
-                onClick={() => onNavigate('about')}
+                onClick={() => onNavigate('consultation')}
                 className="text-xs text-[#d4af37] hover:underline flex items-center gap-1 font-medium"
               >
-                <span>Read detailed professional bio & regulatory filings</span>
+                <span>Consult directly with Mann Jain</span>
                 <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -387,7 +387,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
       </section>
 
       {/* ACADEMY & DEHRADUN COMPETITION SHOWCASE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section id="academy" className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="bg-[#121720] rounded-xl p-8 sm:p-12 text-left">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
@@ -424,7 +424,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
 
               <div className="pt-2">
                 <button
-                  onClick={() => onNavigate('academy')}
+                  onClick={() => onOpenBooking('Dehradun 2026 Competition & Mentorship')}
                   className="px-6 py-3 rounded bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] font-medium text-xs transition-colors flex items-center gap-2"
                 >
                   <span>Apply for mentorship and team selection</span>
@@ -453,7 +453,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
       </section>
 
       {/* LEAD CONSULTATION FORM */}
-      <section id="consultation-form" className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section id="consultation" className="max-w-4xl mx-auto px-4 sm:px-6">
         <LeadForm />
       </section>
     </div>

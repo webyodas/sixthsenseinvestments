@@ -3,20 +3,30 @@ import { Menu, X } from 'lucide-react';
 import { Logo } from './Logo';
 
 interface NavbarProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
+  currentPage?: string;
+  onNavigate: (sectionId: string) => void;
+  onScrollTo?: (sectionId: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onNavigate, onScrollTo }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleNavClick = (id: string) => {
+    if (onScrollTo) {
+      onScrollTo(id);
+    } else {
+      onNavigate(id);
+    }
+    setIsOpen(false);
+  };
+
   const navLinks = [
-    { id: 'home', label: 'Overview' },
-    { id: 'about', label: 'Founder & Governance' },
-    { id: 'services', label: 'Services' },
+    { id: 'overview', label: 'Overview' },
+    { id: 'alliance', label: 'Aditya Birla Capital' },
+    { id: 'capabilities', label: 'Services' },
+    { id: 'track-record', label: 'Track Record' },
     { id: 'academy', label: 'Academy' },
-    { id: 'blog', label: 'Research' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'consultation', label: 'Contact' },
   ];
 
   return (
@@ -26,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         
         {/* Wordmark */}
         <button 
-          onClick={() => onNavigate('home')}
+          onClick={() => handleNavClick('overview')}
           className="flex items-center gap-3 text-left"
         >
           <Logo className="w-8 h-8 text-[#d4af37]" variant="gold" />
@@ -40,27 +50,23 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           </div>
         </button>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links (In-page smooth anchor jumps) */}
         <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <button
               key={link.id}
-              onClick={() => onNavigate(link.id)}
-              className={`text-sm transition-colors py-1 ${
-                currentPage === link.id
-                  ? 'text-white font-medium'
-                  : 'text-[#8b95a5] hover:text-white'
-              }`}
+              onClick={() => handleNavClick(link.id)}
+              className="text-sm text-[#8b95a5] hover:text-white transition-colors py-1 font-medium"
             >
               {link.label}
             </button>
           ))}
         </nav>
 
-        {/* Action CTAs */}
+        {/* Action CTA */}
         <div className="hidden sm:flex items-center gap-4">
           <button
-            onClick={() => onNavigate('contact')}
+            onClick={() => handleNavClick('consultation')}
             className="px-4 py-2 bg-[#d4af37] hover:bg-[#c49f2e] text-[#090c10] font-semibold text-xs tracking-normal transition-colors rounded-none"
           >
             Consult Advisory
@@ -85,23 +91,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           {navLinks.map((link) => (
             <button
               key={link.id}
-              onClick={() => {
-                onNavigate(link.id);
-                setIsOpen(false);
-              }}
-              className={`block w-full text-left py-2 text-sm ${
-                currentPage === link.id ? 'text-white font-semibold' : 'text-[#8b95a5]'
-              }`}
+              onClick={() => handleNavClick(link.id)}
+              className="block w-full text-left py-2 text-sm text-[#8b95a5] hover:text-white"
             >
               {link.label}
             </button>
           ))}
           <div className="pt-4 flex flex-col gap-3">
             <button
-              onClick={() => {
-                onNavigate('contact');
-                setIsOpen(false);
-              }}
+              onClick={() => handleNavClick('consultation')}
               className="w-full py-2.5 bg-[#d4af37] text-[#090c10] font-semibold text-xs text-center"
             >
               Consult Advisory
@@ -112,3 +110,4 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     </header>
   );
 };
+export default Navbar;

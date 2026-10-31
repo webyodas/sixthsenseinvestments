@@ -4,42 +4,64 @@ import { Footer } from './components/Footer';
 import { StickyMobileBar } from './components/StickyMobileBar';
 import { BookingModal } from './components/BookingModal';
 import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { Services } from './pages/Services';
-import { Academy } from './pages/Academy';
-import { BlogPage } from './pages/Blog';
-import { BlogPost } from './pages/BlogPost';
-import { Contact } from './pages/Contact';
+
+// ARCHIVED ENTERPRISE MODULES (100% preserved for post-pitch conversion)
+import { About as AboutArchived } from './pages/About';
+import { Services as ServicesArchived } from './pages/Services';
+import { Academy as AcademyArchived } from './pages/Academy';
+import { BlogPage as BlogArchived } from './pages/Blog';
+import { BlogPost as BlogPostArchived } from './pages/BlogPost';
+import { Contact as ContactArchived } from './pages/Contact';
 
 export function App() {
-  const [currentPage, setCurrentPage] = useState<string>('home');
-  const [selectedBlogSlug, setSelectedBlogSlug] = useState<string>('');
   const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
   const [bookingService, setBookingService] = useState<string>('');
+  const [archivedView, setArchivedView] = useState<string | null>(null);
+  const [selectedBlogSlug, setSelectedBlogSlug] = useState<string>('');
 
-  // Handle URL hash routing
+  // Handle in-page section scrolling & preserved archive deep-links
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleHash = () => {
       const hash = window.location.hash.replace('#', '').trim();
+      if (!hash) {
+        setArchivedView(null);
+        return;
+      }
 
-      if (hash.startsWith('blog/')) {
-        const slug = hash.replace('blog/', '');
-        setSelectedBlogSlug(slug);
-        setCurrentPage('blog-post');
-      } else if (hash && ['home', 'about', 'services', 'academy', 'blog', 'contact'].includes(hash)) {
-        setCurrentPage(hash);
+      if (hash.startsWith('archive-blog/')) {
+        setSelectedBlogSlug(hash.replace('archive-blog/', ''));
+        setArchivedView('blog-post');
+      } else if (['archive-about', 'archive-services', 'archive-academy', 'archive-blog', 'archive-contact'].includes(hash)) {
+        setArchivedView(hash);
+      } else {
+        // Single-Page In-Section Scroll
+        setArchivedView(null);
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
       }
     };
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
-  const navigateTo = (page: string) => {
-    setCurrentPage(page);
-    window.location.hash = page === 'home' ? '' : page;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleScrollTo = (sectionId: string) => {
+    if (archivedView) {
+      setArchivedView(null);
+      window.location.hash = '';
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleOpenBooking = (serviceTitle?: string) => {
@@ -50,73 +72,43 @@ export function App() {
   return (
     <div className="min-h-[100dvh] bg-[#090c10] text-[#f1f4f8] flex flex-col selection:bg-[#d4af37]/30 selection:text-[#f1f4f8]">
       {/* Navigation */}
-      <Navbar currentPage={currentPage} onNavigate={navigateTo} />
+      <Navbar onScrollTo={handleScrollTo} onNavigate={handleScrollTo} />
 
-      {/* Main Content Area */}
+      {/* Main Single-Page Portfolio Showcase */}
       <main className="flex-1">
-        {currentPage === 'home' && (
+        {archivedView === 'archive-about' ? (
+          <AboutArchived onOpenBooking={() => handleOpenBooking()} onNavigate={handleScrollTo} />
+        ) : archivedView === 'archive-services' ? (
+          <ServicesArchived onSelectService={(title) => handleOpenBooking(title)} />
+        ) : archivedView === 'archive-academy' ? (
+          <AcademyArchived onApply={() => handleOpenBooking('Trading Mentorship')} />
+        ) : archivedView === 'archive-blog' ? (
+          <BlogArchived onSelectBlog={(slug) => { setSelectedBlogSlug(slug); setArchivedView('blog-post'); }} />
+        ) : archivedView === 'blog-post' ? (
+          <BlogPostArchived slug={selectedBlogSlug} onBack={() => setArchivedView('archive-blog')} onOpenBooking={() => handleOpenBooking()} />
+        ) : archivedView === 'archive-contact' ? (
+          <ContactArchived />
+        ) : (
           <Home 
-            onNavigate={navigateTo} 
-            onOpenBooking={() => handleOpenBooking()} 
+            onNavigate={handleScrollTo} 
+            onOpenBooking={handleOpenBooking} 
           />
-        )}
-
-        {currentPage === 'about' && (
-          <About 
-            onNavigate={navigateTo} 
-            onOpenBooking={() => handleOpenBooking()} 
-          />
-        )}
-
-        {currentPage === 'services' && (
-          <Services 
-            onSelectService={(srv) => handleOpenBooking(srv)} 
-          />
-        )}
-
-        {currentPage === 'academy' && (
-          <Academy 
-            onApply={() => handleOpenBooking('Stock Market Academy / Mentorship')} 
-          />
-        )}
-
-        {currentPage === 'blog' && (
-          <BlogPage 
-            onSelectBlog={(slug) => {
-              setSelectedBlogSlug(slug);
-              setCurrentPage('blog-post');
-              window.location.hash = `blog/${slug}`;
-            }} 
-          />
-        )}
-
-        {currentPage === 'blog-post' && (
-          <BlogPost 
-            slug={selectedBlogSlug}
-            onBack={() => navigateTo('blog')}
-            onOpenBooking={() => handleOpenBooking()}
-          />
-        )}
-
-        {currentPage === 'contact' && (
-          <Contact />
         )}
       </main>
 
-      {/* Global Booking Consultation Modal */}
+      {/* Footer */}
+      <Footer onScrollTo={handleScrollTo} onNavigate={handleScrollTo} />
+
+      {/* Sticky Bottom Mobile Bar */}
+      <StickyMobileBar onOpenBooking={() => handleOpenBooking()} />
+
+      {/* Lead Consultation Modal */}
       <BookingModal 
         isOpen={isBookingOpen} 
         onClose={() => setIsBookingOpen(false)} 
         initialService={bookingService} 
       />
-
-      {/* Sticky Mobile Action Bar */}
-      <StickyMobileBar onOpenBooking={() => handleOpenBooking()} />
-
-      {/* Institutional Footer */}
-      <Footer onNavigate={navigateTo} />
     </div>
   );
 }
-
 export default App;

@@ -3,10 +3,21 @@ import { ExternalLink } from 'lucide-react';
 import { Logo } from './Logo';
 
 interface FooterProps {
-  onNavigate: (page: string) => void;
+  onNavigate?: (page: string) => void;
+  onScrollTo?: (sectionId: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onScrollTo }) => {
+  const handleLinkClick = (id: string) => {
+    if (onScrollTo) {
+      onScrollTo(id);
+    } else if (onNavigate) {
+      onNavigate(id);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-[#05070a] text-[#7d8898] pt-20 pb-28 md:pb-16 text-sm">
       <div className="max-w-7xl mx-auto px-6">
@@ -50,14 +61,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           <div className="md:col-span-3 space-y-3 text-left">
-            <h4 className="text-xs font-semibold text-white">Sections</h4>
+            <h4 className="text-xs font-semibold text-white">Navigation</h4>
             <ul className="space-y-2 text-xs">
-              <li><button onClick={() => onNavigate('home')} className="hover:text-white">Overview</button></li>
-              <li><button onClick={() => onNavigate('about')} className="hover:text-white">Founder & Governance</button></li>
-              <li><button onClick={() => onNavigate('services')} className="hover:text-white">Services Portfolio</button></li>
-              <li><button onClick={() => onNavigate('academy')} className="hover:text-white">Academy & Competitions</button></li>
-              <li><button onClick={() => onNavigate('blog')} className="hover:text-white">Research & Insights</button></li>
-              <li><button onClick={() => onNavigate('contact')} className="hover:text-white">Consult Advisory</button></li>
+              <li><button onClick={() => handleLinkClick('overview')} className="hover:text-white transition-colors">Overview</button></li>
+              <li><button onClick={() => handleLinkClick('alliance')} className="hover:text-white transition-colors">Aditya Birla Capital</button></li>
+              <li><button onClick={() => handleLinkClick('capabilities')} className="hover:text-white transition-colors">Advisory Matrix</button></li>
+              <li><button onClick={() => handleLinkClick('track-record')} className="hover:text-white transition-colors">Live Track Record</button></li>
+              <li><button onClick={() => handleLinkClick('academy')} className="hover:text-white transition-colors">Academy & League</button></li>
+              <li><button onClick={() => handleLinkClick('consultation')} className="hover:text-white transition-colors">Consult Advisory</button></li>
             </ul>
           </div>
 
@@ -88,13 +99,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        {/* Copyright */}
+        {/* Copyright & WebYodas Interactive Signature Badge */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#5b6574]">
           <p>© {new Date().getFullYear()} Sixth Sense Investments. All rights reserved.</p>
-          <p>WebYodas Agency Production</p>
+          
+          <a
+            href="https://webyodas.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="webyodas-link inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#121720] border border-[#d4af37]/40 text-[#d4af37] hover:bg-[#d4af37]/15 transition-colors text-xs font-medium cursor-pointer"
+          >
+            <span>Crafted by WebYodas</span>
+            <ExternalLink className="w-3 h-3 text-[#d4af37]" />
+          </a>
         </div>
 
       </div>
     </footer>
   );
 };
+export default Footer;
