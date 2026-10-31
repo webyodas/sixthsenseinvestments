@@ -3,6 +3,7 @@ import { ArrowLeft, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 import { api } from '../services/api';
 import { Blog } from '../types';
 import { Logo } from '../components/Logo';
+import { MarkdownRenderer } from '../components/MarkdownRenderer';
 
 interface BlogPostProps {
   slug: string;
@@ -105,8 +106,8 @@ export const BlogPost: React.FC<BlogPostProps> = ({ slug, onBack, onOpenBooking 
       )}
 
       {/* Article body */}
-      <div className="text-[#f1f4f8] text-base leading-relaxed space-y-6 whitespace-pre-line font-normal">
-        {blog.content}
+      <div className="pt-2 pb-6">
+        <MarkdownRenderer content={blog.content} />
       </div>
 
       {/* Statutory Disclosure Notice */}
