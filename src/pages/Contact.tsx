@@ -50,7 +50,7 @@ export const Contact: React.FC = () => {
 
               <div className="space-y-4">
                 <a
-                  href="https://wa.me/919876543210?text=Hi%20Mann%20Jain,%20I%20would%20like%20to%20inquire%20about%20Sixth%20Sense%20Investments%20services."
+                  href="https://wa.me/919112399843?text=Hi%20Mann%20Jain,%20I%20would%20like%20to%20inquire%20about%20Sixth%20Sense%20Investments%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-4 rounded bg-[#1a2230] hover:bg-[#253042] transition-colors"
@@ -59,7 +59,7 @@ export const Contact: React.FC = () => {
                     <MessageSquare className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
                     <div>
                       <span className="text-xs font-medium text-[#f1f4f8]">WhatsApp advisory desk</span>
-                      <p className="text-xs text-[#8b9bb4] mt-0.5">+91 98765 43210</p>
+                      <p className="text-xs text-[#8b9bb4] mt-0.5">+91 91123 99843 / +91 80809 07126</p>
                     </div>
                   </div>
                 </a>
@@ -68,8 +68,9 @@ export const Contact: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <Mail className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
                     <div>
-                      <span className="text-xs font-medium text-[#f1f4f8]">Direct advisory inquiries</span>
-                      <p className="text-xs text-[#8b9bb4] mt-0.5">advisory@sixthsenseinvestments.com</p>
+                      <span className="text-xs font-medium text-[#f1f4f8]">Official Advisory Desks</span>
+                      <p className="text-xs text-[#8b9bb4] mt-0.5">sixthsenseinvestments.official@gmail.com</p>
+                      <p className="text-xs text-[#8b9bb4] mt-0.5">mannjain.abm@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -78,9 +79,9 @@ export const Contact: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
                     <div>
-                      <span className="text-xs font-medium text-[#f1f4f8]">Office locations</span>
+                      <span className="text-xs font-medium text-[#f1f4f8]">Registered Office</span>
                       <p className="text-xs text-[#8b9bb4] mt-0.5">
-                        Palghar Commercial Hub & Mumbai Corporate Branch, Maharashtra
+                        Palghar Commercial Center, Maharashtra, India
                       </p>
                     </div>
                   </div>

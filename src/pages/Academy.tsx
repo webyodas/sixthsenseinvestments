@@ -162,27 +162,69 @@ export const Academy: React.FC<AcademyProps> = ({ onApply }) => {
         </div>
       </section>
 
-      {/* GALLERY STRIP */}
+      {/* MENTORSHIP & DESK SESSION MEDIA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
-        <h3 className="font-serif text-2xl text-[#f1f4f8]">Offline classrooms & desk sessions</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <figure className="space-y-2">
-            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
-              <img src="/assets/images/img_2.jpg" alt="Mentorship briefing with Mann Jain" className="w-full h-full object-cover" />
+        <div className="space-y-2">
+          <p className="text-xs text-[#d4af37] font-medium">Curriculum in Action</p>
+          <h3 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8]">
+            Mentorship Media & Execution Lab
+          </h3>
+          <p className="text-sm text-[#8b9bb4]">
+            Authentic training briefings, live risk demonstrations, and competition workstation setups with Founder Mann Jain.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <figure className="space-y-2.5 bg-[#121720] p-4 rounded-xl">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#090c10]">
+              <img src="/assets/images/img_2.jpg" alt="Trade Like Us educational masterclass with Founder Mann Jain" className="w-full h-full object-cover" />
             </div>
-            <figcaption className="text-xs text-[#8b9bb4]">Mentorship briefing with Founder Mann Jain</figcaption>
+            <div className="space-y-1">
+              <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">Video Mentorship</span>
+              <h4 className="font-serif text-base text-[#f1f4f8]">Trade Like Us: Core Mindset</h4>
+              <figcaption className="text-xs text-[#8b9bb4] leading-relaxed">
+                Foundational masterclass with Mann Jain on transitioning from emotional retail speculation to mechanical edge.
+              </figcaption>
+            </div>
           </figure>
-          <figure className="space-y-2">
-            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
-              <img src="/assets/images/img_18.jpg" alt="Live execution terminal" className="w-full h-full object-cover object-bottom" />
+
+          <figure className="space-y-2.5 bg-[#121720] p-4 rounded-xl">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#090c10]">
+              <img src="/assets/images/img_6.jpg" alt="Strategy walkthrough with Founder Mann Jain" className="w-full h-full object-cover" />
             </div>
-            <figcaption className="text-xs text-[#8b9bb4]">Budget Day terminal tracking & live execution</figcaption>
+            <div className="space-y-1">
+              <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">Desk Briefing</span>
+              <h4 className="font-serif text-base text-[#f1f4f8]">Market Structure & Risk Rules</h4>
+              <figcaption className="text-xs text-[#8b9bb4] leading-relaxed">
+                Direct desk strategy sessions covering key levels, liquidity sweeps, and capital preservation protocols.
+              </figcaption>
+            </div>
           </figure>
-          <figure className="space-y-2">
-            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
-              <img src="/assets/images/img_12.jpg" alt="Partner exhibition banner" className="w-full h-full object-cover" />
+
+          <figure className="space-y-2.5 bg-[#121720] p-4 rounded-xl">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#090c10]">
+              <img src="/assets/images/img_18.jpg" alt="Live trading terminal on Union Budget Day" className="w-full h-full object-cover object-bottom" />
             </div>
-            <figcaption className="text-xs text-[#8b9bb4]">Aditya Birla Capital partner exhibition at Palghar</figcaption>
+            <div className="space-y-1">
+              <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">Live Case Study</span>
+              <h4 className="font-serif text-base text-[#f1f4f8]">Budget Day Alpha (₹4.15L)</h4>
+              <figcaption className="text-xs text-[#8b9bb4] leading-relaxed">
+                Terminal analysis demonstrating disciplined risk management during extreme gamma and volatility expansion.
+              </figcaption>
+            </div>
+          </figure>
+
+          <figure className="space-y-2.5 bg-[#121720] p-4 rounded-xl">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#090c10]">
+              <img src="/assets/images/img_20.jpg" alt="Dehradun 2026 competition workstation" className="w-full h-full object-cover" />
+            </div>
+            <div className="space-y-1">
+              <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">National Championship</span>
+              <h4 className="font-serif text-base text-[#f1f4f8]">Dehradun 2026 Squad Lab</h4>
+              <figcaption className="text-xs text-[#8b9bb4] leading-relaxed">
+                Dedicated multi-monitor simulation station for the 5-member team representing Sixth Sense Investments.
+              </figcaption>
+            </div>
           </figure>
         </div>
       </section>

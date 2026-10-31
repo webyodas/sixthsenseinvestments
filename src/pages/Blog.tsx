@@ -13,7 +13,7 @@ export const BlogPage: React.FC<BlogProps> = ({ onSelectBlog }) => {
   const [category, setCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const categories = ['All', 'Case Studies', 'Wealth Advisory', 'Academy & Events', 'Market Insights'];
+  const categories = ['All', 'Case Studies', 'Wealth Advisory', 'Academy & Events', 'Mentorship & Education', 'Market Insights'];
 
   useEffect(() => {
     loadBlogs();

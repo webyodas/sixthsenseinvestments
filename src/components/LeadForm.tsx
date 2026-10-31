@@ -80,7 +80,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
 
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={`https://wa.me/919876543210?text=Hi%20Mann%20Jain,%20I%20have%20submitted%20a%20consultation%20request%20for%20${encodeURIComponent(formData.service_interested)}.%20Name:%20${encodeURIComponent(formData.name)}.`}
+            href={`https://wa.me/919112399843?text=Hi%20Mann%20Jain,%20I%20have%20submitted%20a%20consultation%20request%20for%20${encodeURIComponent(formData.service_interested)}.%20Name:%20${encodeURIComponent(formData.name)}.`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] font-medium py-3 px-6 rounded text-sm transition-colors"
@@ -163,7 +163,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
             <input
               type="tel"
               required
-              placeholder="+91 98765 43210"
+              placeholder="+91 91123 99843"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37]"

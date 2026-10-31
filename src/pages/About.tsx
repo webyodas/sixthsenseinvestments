@@ -35,14 +35,82 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
     }
   ];
 
-  const galleryImages = [
-    { src: '/assets/images/logo_gold.png', caption: 'Official Sixth Sense Investments brand monogram' },
-    { src: '/assets/images/img_3.jpg', caption: 'Mann Jain · Official partner announcement with Aditya Birla Capital' },
-    { src: '/assets/images/img_18.jpg', caption: 'Budget Day multi-monitor terminal (+₹4.15 Lakh net alpha session)' },
-    { src: '/assets/images/img_20.jpg', caption: 'Proprietary execution station & algorithmic research desk' },
-    { src: '/assets/images/img_2.jpg', caption: 'Mann Jain · Market structure & price action mentorship briefing' },
-    { src: '/assets/images/img_6.jpg', caption: 'Market risk governance & strategic commentary' },
-    { src: '/assets/images/img_12.jpg', caption: 'Sixth Sense Investments & Aditya Birla Capital partner exhibition' }
+  const tradingDeskImages = [
+    { 
+      src: '/assets/images/img_3.jpg', 
+      title: 'Aditya Birla Capital Strategic Partnership',
+      category: 'Corporate Alliance',
+      caption: 'Official partner announcement featuring Founder Mann Jain in formal attire with Aditya Birla Capital Stocks & Securities.' 
+    },
+    { 
+      src: '/assets/images/img_18.jpg', 
+      title: 'Union Budget Day Multi-Monitor Terminal',
+      category: 'Live Intraday Desk',
+      caption: 'Multi-screen execution workstation on Union Budget Day where ₹4,15,522.50 net intraday profit was booked under strict risk rules.' 
+    },
+    { 
+      src: '/assets/images/img_20.jpg', 
+      title: 'Dehradun 2026 Competition Announcement',
+      category: 'National League Squad',
+      caption: 'Mann Jain at the proprietary quantitative desk announcing the elite 5-member funded delegation for Dehradun.' 
+    },
+    { 
+      src: '/assets/images/img_2.jpg', 
+      title: 'Educational Series: Trade Like Us',
+      category: 'Mentorship Content',
+      caption: 'Video masterclass thumbnail with Mann Jain outlining the journey from zero retail knowledge to institutional strategy.' 
+    },
+    { 
+      src: '/assets/images/img_6.jpg', 
+      title: 'Desk Market Briefing & Risk Governance',
+      category: 'Executive Commentary',
+      caption: 'Founder Mann Jain conducting a live strategy walkthrough and risk breakdown from his Palghar office.' 
+    },
+    { 
+      src: '/assets/images/img_5.jpg', 
+      title: 'Beyond the Desk: GT 650 Night Ride',
+      category: 'Founder Life & Passions',
+      caption: 'Mann Jain with his Royal Enfield Continental GT 650 cafe racer, balancing high-stakes execution with personal discipline.' 
+    }
+  ];
+
+  const communitySponsorshipImages = [
+    { 
+      src: '/assets/images/img_12.jpg', 
+      title: 'Taal Raas Palghar Title Sponsor Banner',
+      category: 'Event Exhibition',
+      caption: 'Giant official banner featuring Founder Mann Jain with office contact lines (+91 91123 99843) alongside local festival participants.' 
+    },
+    { 
+      src: '/assets/images/img_4.jpg', 
+      title: 'Bajrang Dandiya Raas Palghar',
+      category: 'Festival Sponsorship',
+      caption: 'Event attendee photographed at the official Sixth Sense Investments & Aditya Birla Capital sponsor backdrop wall.' 
+    },
+    { 
+      src: '/assets/images/img_21.jpg', 
+      title: 'Palghar Navratri Pavilion',
+      category: 'Community Presence',
+      caption: 'Youth participants celebrating at the Sixth Sense Investments cultural festival sponsor stage.' 
+    },
+    { 
+      src: '/assets/images/img_9.jpg', 
+      title: 'Cultural Festival Celebration',
+      category: 'Regional Engagement',
+      caption: 'Festival attendee dancing at the Palghar Dandiya arena co-sponsored by Sixth Sense Investments.' 
+    },
+    { 
+      src: '/assets/images/img_17.jpg', 
+      title: 'Taal Raas Community Celebrations',
+      category: 'Cultural Sponsorship',
+      caption: 'Garba evening celebrations sponsored by Sixth Sense Investments to support local community tradition in Palghar.' 
+    },
+    { 
+      src: '/assets/images/img_11.jpg', 
+      title: 'Palghar Youth Community Night',
+      category: 'Community Festival',
+      caption: 'Youth festival crowd gathered under the festive canopy at the Sixth Sense Investments sponsored Garba night.' 
+    }
   ];
 
   return (
@@ -175,31 +243,69 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
         </div>
       </section>
 
-      {/* AUTHENTIC GALLERY */}
+      {/* 1. INSTITUTIONAL TRADING DESK & MEDIA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
         <div className="space-y-2">
-          <p className="text-xs text-[#d4af37] font-medium">Archival record</p>
+          <p className="text-xs text-[#d4af37] font-medium">Operations & Research Desk</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
-            Field documentation & live desk
+            Live Trading Terminals & Strategic Media
           </h2>
           <p className="text-sm text-[#8b9bb4]">
-            Photographs from live trading sessions, community mentoring, and national championship announcements.
+            Photographic record of live market execution, official corporate alliances, and proprietary mentorship releases.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {galleryImages.map((img, idx) => (
-            <figure key={idx} className="space-y-2.5">
-              <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#121720]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {tradingDeskImages.map((img, idx) => (
+            <figure key={idx} className="space-y-2.5 bg-[#121720] p-4 rounded-xl">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#090c10]">
                 <img 
                   src={img.src} 
-                  alt={img.caption} 
+                  alt={img.title} 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <figcaption className="text-xs text-[#8b9bb4] leading-snug">
-                {img.caption}
-              </figcaption>
+              <div className="space-y-1">
+                <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">{img.category}</span>
+                <h3 className="font-serif text-base text-[#f1f4f8]">{img.title}</h3>
+                <figcaption className="text-xs text-[#8b9bb4] leading-relaxed">
+                  {img.caption}
+                </figcaption>
+              </div>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* 2. REGIONAL PALGHAR SPONSORSHIP & COMMUNITY PRESENCE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+        <div className="space-y-2">
+          <p className="text-xs text-[#d4af37] font-medium">Regional Presence</p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8]">
+            Palghar Community & Cultural Sponsorship
+          </h2>
+          <p className="text-sm text-[#8b9bb4] max-w-3xl leading-relaxed">
+            Sixth Sense Investments is proudly rooted in Palghar, Maharashtra. As title and associate sponsors alongside Aditya Birla Capital, our firm actively supports major cultural initiatives, regional youth events, and community festivals including Taal Raas Palghar and Bajrang Dandiya Raas.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {communitySponsorshipImages.map((img, idx) => (
+            <figure key={idx} className="space-y-2.5 bg-[#121720] p-4 rounded-xl">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#090c10]">
+                <img 
+                  src={img.src} 
+                  alt={img.title} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">{img.category}</span>
+                <h3 className="font-serif text-base text-[#f1f4f8]">{img.title}</h3>
+                <figcaption className="text-xs text-[#8b9bb4] leading-relaxed">
+                  {img.caption}
+                </figcaption>
+              </div>
             </figure>
           ))}
         </div>

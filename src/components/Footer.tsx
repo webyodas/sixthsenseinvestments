@@ -53,9 +53,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="md:col-span-4 space-y-3 text-left">
             <h4 className="text-xs font-semibold text-white">Advisory Desks</h4>
             <div className="space-y-1.5 text-xs text-[#8b95a5]">
-              <p>Palghar Commercial Center & Mumbai Corporate Branch</p>
-              <p>advisory@sixthsenseinvestments.com</p>
-              <p>WhatsApp: +91 98765 43210</p>
+              <p>Palghar Commercial Center, Maharashtra</p>
+              <p>sixthsenseinvestments.official@gmail.com</p>
+              <p>mannjain.abm@gmail.com</p>
+              <p>Direct / WhatsApp: +91 91123 99843 / +91 80809 07126</p>
             </div>
           </div>
 

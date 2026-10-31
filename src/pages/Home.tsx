@@ -70,19 +70,19 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
               </div>
             </div>
 
-            {/* Right Column: Hero Visual from Authentic Trade Desk */}
+            {/* Right Column: Hero Visual - Official Corporate Presence */}
             <div className="lg:col-span-5">
               <figure className="space-y-3">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#121720]">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-[#121720]">
                   <img 
-                    src="/assets/images/img_18.jpg" 
-                    alt="Budget day execution terminal at Sixth Sense Investments Palghar desk" 
-                    className="w-full h-full object-cover object-bottom"
+                    src="/assets/images/img_3.jpg" 
+                    alt="Mann Jain, Founder & Research Analyst - Sixth Sense Investments in partnership with Aditya Birla Capital" 
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <figcaption className="text-left text-xs text-[#8b9bb4] flex justify-between items-baseline px-1">
-                  <span>Budget Day Execution Terminal</span>
-                  <span className="text-[#d4af37]">Palghar trading desk</span>
+                  <span>Mann Jain · Founder & Research Analyst</span>
+                  <span className="text-[#d4af37]">Aditya Birla Capital Partner</span>
                 </figcaption>
               </figure>
             </div>
@@ -211,13 +211,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
             <figure className="space-y-3">
               <div className="aspect-[3/4] rounded-xl overflow-hidden bg-[#121720]">
                 <img 
-                  src="/assets/images/img_3.jpg" 
-                  alt="Mann Jain, Founder of Sixth Sense Investments" 
-                  className="w-full h-full object-cover object-top"
+                  src="/assets/images/img_18.jpg" 
+                  alt="Mann Jain trading terminal on Union Budget Day" 
+                  className="w-full h-full object-cover object-bottom"
                 />
               </div>
               <figcaption className="text-xs text-[#8b9bb4]">
-                Mann Jain, Founder & Research Analyst at Sixth Sense Investments
+                Union Budget Day Live Terminal · ₹4,15,522.50 net intraday alpha booked under rule-based risk limits
               </figcaption>
             </figure>
           </div>
@@ -333,12 +333,12 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
                 <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#090c10]">
                   <img 
                     src="/assets/images/img_20.jpg" 
-                    alt="Mann Jain at Sixth Sense Investments proprietary trading station" 
+                    alt="Mann Jain announcing Dehradun 2026 National Competition at Sixth Sense trading station" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <figcaption className="text-xs text-[#8b9bb4]">
-                  Proprietary algorithmic execution station & research desk
+                  Dehradun 2026 National Competition Announcement · Mann Jain at the proprietary execution station
                 </figcaption>
               </figure>
             </div>
