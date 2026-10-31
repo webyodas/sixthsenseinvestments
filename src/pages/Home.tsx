@@ -222,19 +222,21 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
 
           {/* Authentic Founder Quote & Institutional Disclosures */}
           <div className="p-6 rounded-xl bg-[#090c10] border border-[#1e2638] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <img 
-                src="/assets/images/mann_jain_avatar.jpg" 
-                alt="Mann Jain" 
-                className="w-12 h-12 rounded-full object-cover shrink-0 border border-[#d4af37]/40"
-              />
-              <div className="space-y-0.5">
-                <p className="text-xs text-[#f1f4f8] italic">
+            <div className="flex items-start gap-4 max-w-2xl text-left">
+              <div className="w-10 h-10 rounded-xl bg-[#121720] border border-[#d4af37]/40 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <Logo className="w-5 h-5 text-[#d4af37]" variant="gold" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs sm:text-sm text-[#f1f4f8] italic leading-relaxed">
                   &ldquo;Success in Indian financial markets requires deep institutional backing, disciplined risk controls, and unwavering regulatory compliance. Our alliance with Aditya Birla Capital delivers that gold standard to every client.&rdquo;
                 </p>
-                <p className="text-[11px] text-[#8b9bb4]">
-                  Mann Jain · <span className="text-[#d4af37]">Founder & Authorized Partner Liaison (<a href="mailto:mannjain.abm@gmail.com" className="hover:underline">mannjain.abm@gmail.com</a>)</span>
-                </p>
+                <div className="flex flex-wrap items-center gap-2 text-[11px] text-[#8b9bb4]">
+                  <span className="text-[#f1f4f8] font-semibold">Mann Jain</span>
+                  <span className="text-[#374151]">·</span>
+                  <span className="text-[#d4af37]">Founder & Research Analyst</span>
+                  <span className="text-[#374151]">·</span>
+                  <span>Channel Partner Liaison (<a href="mailto:mannjain.abm@gmail.com" className="text-[#8b9bb4] hover:text-[#d4af37] underline">mannjain.abm@gmail.com</a>)</span>
+                </div>
               </div>
             </div>
 

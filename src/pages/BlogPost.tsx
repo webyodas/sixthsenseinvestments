@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 import { api } from '../services/api';
 import { Blog } from '../types';
+import { Logo } from '../components/Logo';
 
 interface BlogPostProps {
   slug: string;
@@ -81,12 +82,8 @@ export const BlogPost: React.FC<BlogPostProps> = ({ slug, onBack, onOpenBooking 
         </h1>
 
         <div className="flex items-center gap-3 pt-4 text-xs">
-          <div className="w-8 h-8 rounded-full overflow-hidden bg-[#121720]">
-            <img 
-              src="/assets/images/mann_jain_avatar.jpg" 
-              alt="Mann Jain" 
-              className="w-full h-full object-cover"
-            />
+          <div className="w-8 h-8 rounded-full bg-[#121720] border border-[#d4af37]/30 flex items-center justify-center">
+            <Logo className="w-4 h-4 text-[#d4af37]" variant="gold" />
           </div>
           <div>
             <p className="font-medium text-[#f1f4f8]">{blog.author}</p>
