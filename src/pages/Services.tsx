@@ -78,14 +78,33 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
 
       {/* ADITYA BIRLA CAPITAL NOTICE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="bg-[#121720] rounded-xl p-8 sm:p-12 space-y-4">
-          <p className="text-xs text-[#d4af37] font-medium">Custodial guarantee</p>
-          <h3 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8]">
-            Direct institutional custody via Aditya Birla Capital
-          </h3>
-          <p className="text-sm text-[#8b9bb4] max-w-3xl leading-relaxed">
-            All Portfolio Management Services (PMS) and depository demat holdings are maintained strictly under the client's direct name with institutional depository supervision, statutory SEBI compliance, and zero commingling of capital.
-          </p>
+        <div className="bg-[#121720] border border-[#1e2638] rounded-xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-left">
+          <div className="space-y-3 max-w-3xl">
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-[#d4af37] font-medium">Custodial guarantee</span>
+              <span className="text-[#374151]">·</span>
+              <span className="text-xs text-[#8b9bb4]">Authorized Channel Partner</span>
+            </div>
+            <h3 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8]">
+              Direct institutional custody via Aditya Birla Capital
+            </h3>
+            <p className="text-sm text-[#8b9bb4] leading-relaxed">
+              All Portfolio Management Services (PMS) and depository demat holdings are maintained strictly under the client&apos;s direct name with institutional depository supervision, statutory SEBI compliance, and zero commingling of capital.
+            </p>
+          </div>
+
+          <div className="p-4 rounded-xl bg-[#090c10] border border-[#1e2638] flex items-center gap-3 shrink-0">
+            <img 
+              src="/assets/images/aditya_birla_capital.png" 
+              alt="Aditya Birla Capital" 
+              className="w-14 h-14 object-contain rounded"
+            />
+            <div className="text-left pr-2">
+              <span className="block text-xs font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
+              <span className="block text-[11px] text-[#8b9bb4]">Institutional Custody</span>
+              <span className="block text-[10px] text-[#d4af37]">SEBI Reg. Depository</span>
+            </div>
+          </div>
         </div>
       </section>
     </div>

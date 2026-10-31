@@ -21,6 +21,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 Sixth Sense Investments
               </h3>
             </div>
+
+            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded bg-[#121720] border border-[#1e2638]">
+              <img 
+                src="/assets/images/aditya_birla_capital.png" 
+                alt="Aditya Birla Capital" 
+                className="w-5 h-5 object-contain rounded-xs" 
+              />
+              <span className="text-[11px] text-[#8b95a5]">
+                Authorized Channel Partner · <strong className="text-white font-medium">Aditya Birla Capital</strong>
+              </span>
+            </div>
             <p className="text-xs text-[#8b95a5] leading-relaxed max-w-sm">
               Founded by Mann Jain. Quantitative equity trading, Portfolio Management Services (PMS), 
               and institutional research advisory in strategic association with Aditya Birla Capital.

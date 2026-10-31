@@ -21,11 +21,24 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
             {/* Left Column: Editorial Proposition */}
             <div className="lg:col-span-7 space-y-8 text-left">
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Logo className="w-8 h-8 text-[#d4af37]" variant="gold" />
-                  <span className="text-xs text-[#8b9bb4] font-medium">Sixth Sense Investments</span>
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex items-center gap-2">
+                    <Logo className="w-7 h-7 text-[#d4af37]" variant="gold" />
+                    <span className="text-xs text-[#8b9bb4] font-medium">Sixth Sense Investments</span>
+                  </div>
+                  <span className="text-[#374151]">/</span>
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#121720] border border-[#1e2638]">
+                    <img 
+                      src="/assets/images/aditya_birla_capital.png" 
+                      alt="Aditya Birla Capital" 
+                      className="w-4 h-4 object-contain rounded-xs"
+                    />
+                    <span className="text-xs text-[#d4af37] font-medium">
+                      Aditya Birla Capital Partner
+                    </span>
+                  </div>
                 </div>
-                <p className="text-xs text-[#d4af37] font-medium tracking-wide">
+                <p className="text-xs text-[#8b9bb4] font-medium tracking-wide">
                   SEBI Registration INZXXXXX8032 · NISM Series V to XXI
                 </p>
                 <h1 className="font-serif text-4xl sm:text-6xl text-[#f1f4f8] leading-[1.08] tracking-tight">
@@ -72,17 +85,29 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
 
             {/* Right Column: Hero Visual - Official Corporate Presence */}
             <div className="lg:col-span-5">
-              <figure className="space-y-3">
-                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-[#121720]">
+              <figure className="space-y-3 relative">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-[#121720] relative">
                   <img 
                     src="/assets/images/img_3.jpg" 
                     alt="Mann Jain, Founder & Research Analyst - Sixth Sense Investments in partnership with Aditya Birla Capital" 
                     className="w-full h-full object-cover object-top"
                   />
+                  {/* Floating Official Alliance Badge on the image */}
+                  <div className="absolute top-4 right-4 bg-[#090c10]/90 backdrop-blur-md border border-[#1e2638] rounded-lg p-2.5 flex items-center gap-2.5 shadow-xl">
+                    <img 
+                      src="/assets/images/aditya_birla_capital.png" 
+                      alt="Aditya Birla Capital Logo" 
+                      className="w-8 h-8 object-contain rounded"
+                    />
+                    <div className="text-left">
+                      <span className="block text-[10px] text-[#8b9bb4] uppercase tracking-wider font-medium">Channel Alliance</span>
+                      <span className="block text-xs font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
+                    </div>
+                  </div>
                 </div>
                 <figcaption className="text-left text-xs text-[#8b9bb4] flex justify-between items-baseline px-1">
                   <span>Mann Jain · Founder & Research Analyst</span>
-                  <span className="text-[#d4af37]">Aditya Birla Capital Partner</span>
+                  <span className="text-[#d4af37] font-medium">Aditya Birla Capital Partner</span>
                 </figcaption>
               </figure>
             </div>
@@ -113,45 +138,123 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenBooking }) => {
         </div>
       </section>
 
-      {/* INSTITUTIONAL PARTNERSHIP SECTION */}
+      {/* INSTITUTIONAL ALLIANCE & ADITYA BIRLA CAPITAL AFFILIATION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="bg-[#121720] rounded-xl p-8 sm:p-12 text-left space-y-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
-            <div className="space-y-2">
-              <p className="text-xs text-[#d4af37] font-medium">Strategic alliance</p>
-              <h2 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8]">
-                Authorized channel partnership with Aditya Birla Capital
+        <div className="bg-[#121720] border border-[#1e2638] rounded-2xl p-8 sm:p-14 text-left space-y-10 relative overflow-hidden">
+          
+          {/* Subtle warm ambient highlight */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Section Header with Official Dual Branding */}
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-8 border-b border-[#1e2638]">
+            <div className="space-y-3 max-w-3xl">
+              <div className="flex items-center gap-2 text-xs text-[#d4af37] font-medium">
+                <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
+                <span>Institutional Affiliation & Strategic Channel Partnership</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#f1f4f8] leading-tight">
+                Direct Corporate Alliance with Aditya Birla Capital
               </h2>
+              <p className="text-sm sm:text-base text-[#8b9bb4] leading-relaxed">
+                Sixth Sense Investments operates in official channel alliance with Aditya Birla Capital. Our clients benefit from the analytical agility and quantitative rigor of a boutique research desk paired with the custodial safety, clearing depth, and multi-asset wealth management architecture of a ₹5+ Lakh Crore Indian conglomerate.
+              </p>
             </div>
-            <button
-              onClick={() => onNavigate('about')}
-              className="text-xs text-[#8b9bb4] hover:text-[#f1f4f8] flex items-center gap-1 font-medium"
-            >
-              <span>Review alliance disclosures</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
+
+            {/* Official Aditya Birla Capital Logo Crest Card */}
+            <div className="p-4 rounded-xl bg-[#090c10] border border-[#1e2638] flex items-center gap-4 shrink-0 shadow-lg">
+              <img 
+                src="/assets/images/aditya_birla_capital.png" 
+                alt="Aditya Birla Capital Official Crest" 
+                className="w-16 h-16 object-contain rounded"
+              />
+              <div className="text-left pr-2">
+                <span className="block text-[11px] text-[#8b9bb4] font-medium uppercase tracking-wider">Strategic Alliance</span>
+                <span className="block text-base font-semibold text-[#f1f4f8]">Aditya Birla Capital</span>
+                <span className="block text-xs text-[#d4af37]">Stocks & Securities Desk</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-[#8b9bb4]">
-            <div className="space-y-2">
-              <h3 className="text-base font-serif text-[#f1f4f8]">Direct custodial security</h3>
-              <p className="leading-relaxed">
-                Client capital and demat securities remain under direct institutional custody at Aditya Birla Capital with zero commingling of client funds.
+          {/* Core Institutional Synergy Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div className="p-6 rounded-xl bg-[#090c10]/80 border border-[#1e2638] space-y-3">
+              <div className="w-8 h-8 rounded-lg bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] font-serif text-sm">
+                01
+              </div>
+              <h3 className="font-serif text-lg text-[#f1f4f8]">Institutional Custody</h3>
+              <p className="text-xs text-[#8b9bb4] leading-relaxed">
+                All client funds and demat securities reside directly with Aditya Birla Capital Ltd (SEBI Reg. No. INZ000172636). Zero pooling or commingling of client funds.
               </p>
             </div>
-            <div className="space-y-2">
-              <h3 className="text-base font-serif text-[#f1f4f8]">SEBI-regulated PMS</h3>
-              <p className="leading-relaxed">
-                Access statutory Portfolio Management Services structured with institutional asset allocation, systematic rebalancing, and independent auditing.
+
+            <div className="p-6 rounded-xl bg-[#090c10]/80 border border-[#1e2638] space-y-3">
+              <div className="w-8 h-8 rounded-lg bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] font-serif text-sm">
+                02
+              </div>
+              <h3 className="font-serif text-lg text-[#f1f4f8]">Regulated PMS Access</h3>
+              <p className="text-xs text-[#8b9bb4] leading-relaxed">
+                Direct access to statutory Portfolio Management Services, multi-cap discretionary strategies, and audited factor tilts managed under SEBI compliance standards.
               </p>
             </div>
-            <div className="space-y-2">
-              <h3 className="text-base font-serif text-[#f1f4f8]">Primary market syndicate</h3>
-              <p className="leading-relaxed">
-                Direct allotment channels for Initial Public Offerings (IPO distribution) and physical share dematerialization through institutional RTA desks.
+
+            <div className="p-6 rounded-xl bg-[#090c10]/80 border border-[#1e2638] space-y-3">
+              <div className="w-8 h-8 rounded-lg bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] font-serif text-sm">
+                03
+              </div>
+              <h3 className="font-serif text-lg text-[#f1f4f8]">IPO Allocation Syndicate</h3>
+              <p className="text-xs text-[#8b9bb4] leading-relaxed">
+                Direct primary market allocation desks for Mainboard and SME Initial Public Offerings (IPO), rights issues, and Sovereign Gold Bonds (SGBs).
               </p>
+            </div>
+
+            <div className="p-6 rounded-xl bg-[#090c10]/80 border border-[#1e2638] space-y-3">
+              <div className="w-8 h-8 rounded-lg bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37] font-serif text-sm">
+                04
+              </div>
+              <h3 className="font-serif text-lg text-[#f1f4f8]">Share Dematerialization</h3>
+              <p className="text-xs text-[#8b9bb4] leading-relaxed">
+                Direct offline and physical facilitation for converting physical paper share certificates into active digital demat holdings with registrar and transfer agents (RTA).
+              </p>
+            </div>
+
+          </div>
+
+          {/* Authentic Founder Quote & Institutional Disclosures */}
+          <div className="p-6 rounded-xl bg-[#090c10] border border-[#1e2638] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <img 
+                src="/assets/images/mann_jain_avatar.jpg" 
+                alt="Mann Jain" 
+                className="w-12 h-12 rounded-full object-cover shrink-0 border border-[#d4af37]/40"
+              />
+              <div className="space-y-0.5">
+                <p className="text-xs text-[#f1f4f8] italic">
+                  &ldquo;Success in Indian financial markets requires deep institutional backing, disciplined risk controls, and unwavering regulatory compliance. Our alliance with Aditya Birla Capital delivers that gold standard to every client.&rdquo;
+                </p>
+                <p className="text-[11px] text-[#8b9bb4]">
+                  Mann Jain · <span className="text-[#d4af37]">Founder & Authorized Partner Liaison (<a href="mailto:mannjain.abm@gmail.com" className="hover:underline">mannjain.abm@gmail.com</a>)</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                onClick={onOpenBooking}
+                className="px-5 py-2.5 rounded bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] font-medium text-xs transition-colors flex items-center gap-1.5"
+              >
+                <span>Open Partner Demat Account</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+              <button
+                onClick={() => onNavigate('about')}
+                className="px-4 py-2.5 rounded border border-[#1e2638] text-xs text-[#8b9bb4] hover:text-[#f1f4f8] hover:border-[#8b9bb4] transition-colors"
+              >
+                View Disclosures
+              </button>
             </div>
           </div>
+
         </div>
       </section>
 

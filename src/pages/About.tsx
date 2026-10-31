@@ -6,6 +6,14 @@ interface AboutProps {
   onNavigate: (page: string) => void;
 }
 
+interface ImageCardItem {
+  src: string;
+  title: string;
+  category: string;
+  caption: string;
+  partnerLogo?: string;
+}
+
 export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
   const certifications = [
     {
@@ -35,11 +43,12 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
     }
   ];
 
-  const tradingDeskImages = [
+  const tradingDeskImages: ImageCardItem[] = [
     { 
       src: '/assets/images/img_3.jpg', 
       title: 'Aditya Birla Capital Strategic Partnership',
       category: 'Corporate Alliance',
+      partnerLogo: '/assets/images/aditya_birla_capital.png',
       caption: 'Official partner announcement featuring Founder Mann Jain in formal attire with Aditya Birla Capital Stocks & Securities.' 
     },
     { 
@@ -74,7 +83,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
     }
   ];
 
-  const communitySponsorshipImages = [
+  const communitySponsorshipImages: ImageCardItem[] = [
     { 
       src: '/assets/images/img_12.jpg', 
       title: 'Taal Raas Palghar Title Sponsor Banner',
@@ -266,7 +275,12 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
                 />
               </div>
               <div className="space-y-1">
-                <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">{img.category}</span>
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">{img.category}</span>
+                  {img.partnerLogo && (
+                    <img src={img.partnerLogo} alt="Partner Logo" className="w-4 h-4 object-contain rounded-xs" />
+                  )}
+                </div>
                 <h3 className="font-serif text-base text-[#f1f4f8]">{img.title}</h3>
                 <figcaption className="text-xs text-[#8b9bb4] leading-relaxed">
                   {img.caption}
@@ -300,7 +314,12 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking, onNavigate }) => {
                 />
               </div>
               <div className="space-y-1">
-                <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">{img.category}</span>
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] text-[#d4af37] font-medium uppercase tracking-wider">{img.category}</span>
+                  {img.partnerLogo && (
+                    <img src={img.partnerLogo} alt="Partner Logo" className="w-4 h-4 object-contain rounded-xs" />
+                  )}
+                </div>
                 <h3 className="font-serif text-base text-[#f1f4f8]">{img.title}</h3>
                 <figcaption className="text-xs text-[#8b9bb4] leading-relaxed">
                   {img.caption}
