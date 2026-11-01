@@ -19,8 +19,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onScrollTo }) => {
   };
 
   return (
-    <footer className="bg-[#05070a] text-[#7d8898] pt-20 pb-28 md:pb-16 text-sm">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer data-ui="footer" className="bg-[#05070a] text-[#7d8898] pt-16 sm:pt-20 pb-32 md:pb-16 text-sm border-t border-[#1e2638]/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Top closing grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16">

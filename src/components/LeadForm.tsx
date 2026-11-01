@@ -111,22 +111,22 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
   }
 
   return (
-    <form data-ui="form" onSubmit={handleSubmit} className={`bg-[#121720] text-[#f1f4f8] rounded-xl p-8 sm:p-10 space-y-6 ${className}`}>
-      <div className="space-y-2 text-left">
+    <form data-ui="form" onSubmit={handleSubmit} className={`bg-[#121720] border border-[#1e2638] text-[#f1f4f8] rounded-2xl p-5 sm:p-8 lg:p-10 space-y-5 sm:space-y-6 ${className}`}>
+      <div className="space-y-1.5 sm:space-y-2 text-left">
         <p className="text-xs text-[#d4af37] font-medium">Advisory consultation</p>
         <h3 className="font-serif text-2xl sm:text-3xl text-[#f1f4f8]">Institutional portfolio review</h3>
-        <p className="text-[#8b9bb4] text-sm">
+        <p className="text-[#8b9bb4] text-xs sm:text-sm">
           Direct consultation with Founder & SEBI Registered Research Analyst Mann Jain.
         </p>
       </div>
 
       {error && (
-        <div className="bg-[#241315] text-[#f87171] text-sm px-4 py-3 rounded">
+        <div className="bg-[#241315] border border-rose-800/40 text-[#f87171] text-xs sm:text-sm px-4 py-3 rounded-xl">
           {error}
         </div>
       )}
 
-      <div className="space-y-4 text-left">
+      <div className="space-y-3.5 sm:space-y-4 text-left">
         <div>
           <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
             Full name
@@ -137,11 +137,11 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
             placeholder="Rahul Sharma"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37]"
+            className="w-full h-11 px-3.5 bg-[#090c10] border border-[#1e2638] focus:border-[#d4af37] text-[#f1f4f8] rounded-xl text-base sm:text-sm placeholder-[#4b5563] outline-none transition-colors"
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
           <div>
             <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
               Email address
@@ -152,7 +152,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
               placeholder="rahul@example.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37]"
+              className="w-full h-11 px-3.5 bg-[#090c10] border border-[#1e2638] focus:border-[#d4af37] text-[#f1f4f8] rounded-xl text-base sm:text-sm placeholder-[#4b5563] outline-none transition-colors"
             />
           </div>
 
@@ -166,12 +166,12 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
               placeholder="+91 91123 99843"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37]"
+              className="w-full h-11 px-3.5 bg-[#090c10] border border-[#1e2638] focus:border-[#d4af37] text-[#f1f4f8] rounded-xl text-base sm:text-sm placeholder-[#4b5563] outline-none transition-colors"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
           <div>
             <label className="block text-xs font-medium text-[#8b9bb4] mb-1.5">
               Service of interest
@@ -179,7 +179,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
             <select
               value={formData.service_interested}
               onChange={(e) => setFormData({ ...formData, service_interested: e.target.value })}
-              className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#d4af37] cursor-pointer"
+              className="w-full h-11 px-3.5 bg-[#090c10] border border-[#1e2638] focus:border-[#d4af37] text-[#f1f4f8] rounded-xl text-base sm:text-sm outline-none transition-colors cursor-pointer"
             >
               {servicesList.map((s) => (
                 <option key={s} value={s} className="bg-[#090c10] text-[#f1f4f8]">
@@ -196,7 +196,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
             <select
               value={formData.investment_budget}
               onChange={(e) => setFormData({ ...formData, investment_budget: e.target.value })}
-              className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#d4af37] cursor-pointer"
+              className="w-full h-11 px-3.5 bg-[#090c10] border border-[#1e2638] focus:border-[#d4af37] text-[#f1f4f8] rounded-xl text-base sm:text-sm outline-none transition-colors cursor-pointer"
             >
               {budgetTiers.map((b) => (
                 <option key={b} value={b} className="bg-[#090c10] text-[#f1f4f8]">
@@ -216,7 +216,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
             placeholder="Share your investment horizon, risk tolerance, or specific goals..."
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full bg-[#090c10] text-[#f1f4f8] rounded px-4 py-3 text-sm placeholder-[#4b5563] focus:outline-none focus:ring-1 focus:ring-[#d4af37] resize-none"
+            className="w-full p-3.5 bg-[#090c10] border border-[#1e2638] focus:border-[#d4af37] text-[#f1f4f8] rounded-xl text-base sm:text-sm placeholder-[#4b5563] outline-none transition-colors resize-none"
           ></textarea>
         </div>
       </div>
@@ -225,7 +225,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3.5 px-6 rounded font-medium text-sm bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+          className="w-full h-12 px-6 rounded-xl font-semibold text-sm bg-[#d4af37] hover:bg-[#e5c158] text-[#090c10] transition-colors flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
         >
           {loading ? (
             <>
@@ -241,9 +241,9 @@ export const LeadForm: React.FC<LeadFormProps> = ({ initialService, onSuccess, c
         </button>
       </div>
 
-      <div className="flex items-center justify-center gap-2 text-xs text-[#8b9bb4] pt-1">
-        <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
-        <span>SEBI compliance standards observed. Complete client confidentiality maintained.</span>
+      <div className="flex items-center justify-center gap-2 text-[11px] sm:text-xs text-[#8b9bb4] pt-1">
+        <ShieldCheck className="w-4 h-4 text-[#d4af37] shrink-0" />
+        <span className="text-center">SEBI compliance standards observed. Complete client confidentiality maintained.</span>
       </div>
     </form>
   );
